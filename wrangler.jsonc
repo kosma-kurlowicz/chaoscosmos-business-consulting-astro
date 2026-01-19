@@ -1,5 +1,5 @@
 {
-  "name": "cc-business-consulting",
+    "name": "chaoscosmos-business-consulting-astro",
   "compatibility_date": "2026-01-19", // Update to the day you deploy
   "assets": {
     "directory": "./dist"
