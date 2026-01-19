@@ -1,5 +1,5 @@
 ---
-import { Badge } from 'accessible-astro-components'
+import { Badge, Link } from 'accessible-astro-components'
 import { Icon } from 'astro-icon/components'
 import { Image } from 'astro:assets'
 import SlideImage1 from '../assets/img/pexels-kosma-kurlowicz-1051820-2029647.jpg'
@@ -46,17 +46,29 @@ const options: Options = {
   }
 }
 
-/**
- * Hero Component
- *
- * @description A component that displays a hero section with a title, description, and image
- */
 interface Props {
   /**
-   * The source URL for the image
+   * The title text to display
+   * @default "Contact me"
    */
-  src?: string
+  title?: string
+  /**
+   * The URL the button should link to
+   * @default "https://github.com/incluud/accessible-astro-starter"
+   */
+  link?: string
+  /**
+   * The text to display on the button
+   * @default "Get Started"
+   */
+  linkText?: string
 }
+
+const {
+  title = 'Opowiedz mi o Twoim problemie, to nic nie kosztuje',
+  link = 'tel:+48508865836',
+  linkText = 'Zadzwoń teraz',
+} = Astro.props
 ---
 
 <section class="hero w-full p-[4rem] max-w-full">
@@ -70,16 +82,6 @@ interface Props {
         <h1 class="text-center text-6xl lg:text-8xl">
           <slot><span>Wszechstronny</span><br> consulting biznesowy</slot>
         </h1>
-          <!-- <Link
-            href="https://github.com/incluud/accessible-astro-starter"
-            isButton
-            animateOnHover
-            animationType="boop"
-          >
-            <Icon aria-hidden="true" name="lucide:mail" size="1.5rem" />
-            Skontaktuj się
-          </Link>-->
- <!-- <Image class="hidden lg:block" src={src} alt="" decoding="async" width={800} height={600} loading="eager" /> -->
           <div class="flex flex-row items-center gap-4 flex-wrap justify-center m-4">
             <Badge type="default" size="lg">brand</Badge>
             <Badge type="default" size="lg">web</Badge>
