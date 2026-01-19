@@ -1,0 +1,674 @@
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import Hero from '@components/Hero.astro'
+import { Image } from 'astro:assets'
+import { Code } from 'astro/components';
+import Feature from '@components/Feature.astro'
+import Counter from '@components/Counter.astro'
+import ContentMedia from '@components/ContentMedia.astro'
+import FeaturedProjects from '@components/FeaturedProjects.astro'
+import FeaturedArticles from '@components/FeaturedArticles.astro'
+import { Accordion, AccordionItem, Avatar, AvatarGroup, Badge, Heading, Link } from 'accessible-astro-components'
+import { Icon } from 'astro-icon/components'
+import Testimonials from '@components/Testimonials.astro'
+import ServicesImageWooCommerce from '../assets/img/chaoscosmos-website-malwina-jachimczak.webp'
+import ServicesImageVideo from '../assets/img/Screenshot 2026-01-14 214900.webp'
+import ServicesImagePhoto from '../assets/img/chaoscosmos-old-masters-plastic-fanta-detail-g_DSC3261-w1600-h2400.webp'
+import ServicesImageWebsites from '../assets/img/chaoscosmos-glosno-eu-mockup.webp'
+import ServicesImageBrand from '../assets/img/chaoscosmos-brand-book-example-v3.png'
+import ServicesImageSocial from '../assets/img/chaoscosmos-social-mockup.webp'
+import EyeImageBall from '../assets/img/eye-ball-w500.webp'
+import EyeImageCenter from '../assets/img/eye-center-w120.webp'
+import EyeImageOpen from '../assets/img/eye-open-w550.webp'
+import '../assets/css/termynal.css';
+---
+
+<DefaultLayout title="Home">
+  <Hero />
+<section class="py-24">
+  <div class="container">
+    <h2 class="text-base/7 text-center font-semibold">Usługi</h2> 
+    <p class="mt-2 text-5xl text-center font-semibold tracking-tight text-balance sm:text-6xl">Pełne spektrum wsparcia</p>
+    <div class="mt-10 grid gap-4 sm:mt-16 lg:grid-cols-3 lg:grid-rows-2">
+      <div class="relative lg:row-span-2 gsapanim">
+        <div class="absolute inset-px"></div>
+        <div class="relative flex h-full flex-col overflow-hidden bg-[var(--card-background-color)] rounded-[calc(var(--radius-lg)+1px)] lg:rounded-tl-[calc(2rem+1px)]">
+          <div class="px-8 pt-8 pb-3 sm:px-10 sm:pt-10 sm:pb-0">
+            <h3 class="mt-2 text-3xl font-medium tracking-tight max-lg:text-center">Wizja i strategia biznesu</h3>
+            <p class="mt-2 max-w-lg max-lg:text-center">Otrzymasz przejrzysty, kompletny model biznesowy, który zintegruje Twoją wizję w jedną, spójną strategię działania. Uporządkuję Twoje pomysły wykorzystując metodologię Business Model Canvas.</p>
+          </div>
+          <div class="relative w-full mt-10 grow overflow-hidden">
+            <Image src={EyeImageBall} alt="Eye ball illustration" id="eye-ball" />
+            <Image src={EyeImageCenter} alt="Open eye illustration" id="eye-center" />
+            <Image src={EyeImageOpen} alt="Open eye illustration" id="eye-open" />
+          </div>
+        </div>
+        <div class="pointer-events-none absolute inset-px rounded-lg shadow-sm outline outline-black/5 lg:rounded-tl-4xl"></div>
+      </div>
+      <div class="relative max-lg:row-start-1 gsapanim">
+        <div class="absolute inset-px rounded-lg bg-white max-lg:rounded-t-4xl"></div>
+        <div class="relative flex h-full flex-col overflow-hidden bg-[var(--card-background-color)] rounded-[calc(var(--radius-lg)+1px)] max-lg:rounded-t-[calc(2rem+1px)]">
+          <div class="px-8 pt-8 sm:px-10 sm:pt-10">
+            <h3 class="mt-2 text-3xl font-medium tracking-tight max-lg:text-center">Identyfikacja wizualna marki</h3>
+            <p class="mt-2 max-w-lg max-lg:text-center">Wzbudzisz zaufanie na każdym etapie kontaktu z klietem dzięki systemowi wizualnemu Twojej firmy, który skodyfikuję w szczegółowej księdze znaku (brand book).</p>
+          </div>
+          <div class="flex flex-1 items-bottom justify-center mt-10 overflow-hidden">
+            <Image src={ServicesImageBrand} alt="Brand identity example" class="w-full" />
+          </div>
+        </div>
+        <div class="pointer-events-none absolute inset-px rounded-lg shadow-sm outline outline-black/5 max-lg:rounded-t-4xl"></div>
+      </div>
+      <div class="relative max-lg:row-start-3 lg:col-start-2 lg:row-start-2 gsapanim">
+        <div class="absolute inset-px rounded-lg bg-white"></div>
+        <div class="relative flex h-full flex-col overflow-hidden bg-[var(--card-background-color)] rounded-[calc(var(--radius-lg)+1px)]">
+          <div class="px-8 pt-8 sm:px-10 sm:pt-10">
+            <h3 class="mt-2 text-3xl font-medium tracking-tight max-lg:text-center">Strony internetowe WordPress i Jamstack</h3>
+            <p class="mt-2 max-w-lg max-lg:text-center">Dostaniesz responsywą stronę internetową, zoptymalizowaną pod kątem szybkości ładowania i SEO, która będzie wyróżniać się mocnym designem.</p>
+          </div>
+          <div class="@container flex flex-1 items-center max-lg:py-6 lg:pb-2">
+            <Image src={ServicesImageWebsites} alt="WordPress site example" class="h-full w-full object-cover" />
+          </div>
+        </div>
+        <div class="pointer-events-none absolute inset-px rounded-lg shadow-sm outline outline-black/5"></div>
+      </div>
+      <div class="relative lg:row-span-2 gsapanim">
+        <div class="absolute inset-px rounded-lg bg-white lg:rounded-r-4xl"></div>
+        <div class="relative flex h-full flex-col overflow-hidden bg-[var(--card-background-color)] rounded-[calc(var(--radius-lg)+1px)] lg:rounded-tr-[calc(2rem+1px)]">
+          <div class="px-8 pt-8 pb-3 sm:px-10 sm:pt-10 sm:pb-0">
+            <h3 class="mt-2 text-3xl font-medium tracking-tight max-lg:text-center">Integracja rozwiązań IT</h3>
+            <p class="mt-2 max-w-lg max-lg:text-center">Będziesz efektywnie sprzedawał dzięki nowoczesnym rozwiązaniom IT, takim jak systemy CMS, platformy e-commerce i narzędzia analityczne, które zintegruję z Twoją infrastrukturą biznesową, jak produkcja, księgowość i marketing.</p>
+          </div>
+          <div class="relative min-h-120 w-full grow">
+            <div class="absolute top-10 right-0 bottom-0 left-10 overflow-hidden rounded-tl-xl bg-gray-900 shadow-2xl outline outline-white/10">
+              <div class="flex bg-gray-900 h-full outline outline-white/5">
+            <div id="termynal" data-termynal>
+            <span data-ty="input">pip install spacy</span>
+            <span data-ty="progress"></span>
+            <span data-ty>Successfully installed spacy</span>
+            <span data-ty></span>
+            <span data-ty="input">python -m spacy download en</span>
+            <span data-ty="progress"></span>
+            <span data-ty>Installed model 'en'</span>
+            <span data-ty></span>
+            <span data-ty="input">python</span>
+            <span data-ty="input" data-ty-prompt=">>>">import spacy</span>
+            <span data-ty="input" data-ty-prompt=">>>">nlp = spacy.load('en')</span>
+            <span data-ty="input" data-ty-prompt=">>>">doc = nlp(u'Hello world')</span>
+            <span data-ty="input" data-ty-prompt=">>>">print([(w.text, w.pos_) for w in doc])</span>
+            <span data-ty>[('Hello', 'INTJ'), ('world', 'NOUN')]</span>
+        </div>
+              </div>
+              <div class="px-6 pt-6 pb-14">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pointer-events-none absolute inset-px rounded-lg shadow-sm outline outline-black/5 lg:rounded-tr-4xl"></div>
+      </div>
+    </div>
+    <div class="mt-2 grid gap-4 sm:mt-4 lg:grid-cols-3 lg:grid-rows-2">
+      <div class="relative lg:row-span-2 gsapanim">
+        <div class="absolute inset-px rounded-lg bg-white lg:rounded-bl-4xl"></div>
+        <div class="relative flex h-full flex-col overflow-hidden bg-[var(--card-background-color)] rounded-[calc(var(--radius-lg)+1px)] lg:rounded-bl-[calc(2rem+1px)] ">
+          <div class="px-8 pt-8 pb-3 sm:px-10 sm:pt-10 sm:pb-0">
+            <h3 class="mt-2 text-3xl font-medium tracking-tight max-lg:text-center">Sklepy WooCommerce i Shopify</h3>
+            <p class="mt-2 max-w-lg max-lg:text-center">Klienci twojego sklepu otrzymają przejrzyste, przyjemne i estetyczne miejsce, w którym poczują się komfortowo dokonując zakupów, co przełoży się na wzrost konwersji i lojalności wobec Twojej marki.</p>
+          </div>
+          <div class="@container mt-10 flex flex-col content-end justify-end flex-wrap relative min-h-120 w-full grow max-lg:mx-auto max-lg:max-w-sm">
+            <div class="absolute inset-x-10 overflow-hidden rounded-t-[12cqw] border-x-[3cqw] border-t-[3cqw] border-gray-700 bg-gray-900 shadow-2xl">
+              <Image src={ServicesImageWooCommerce} alt="WooCommerce store example" class="h-full w-full object-cover" />
+            </div>
+          </div>
+        </div>
+        <div class="pointer-events-none absolute inset-px rounded-lg shadow-sm outline outline-black/5 lg:rounded-bl-4xl"></div>
+      </div>
+      <div class="relative lg:row-span-2 gsapanim">
+        <div class="absolute inset-px rounded-lg bg-white"></div>
+        <div class="relative flex h-full flex-col overflow-hidden bg-[#010101] text-white rounded-[calc(var(--radius-lg)+1px)]">
+          <div class="px-8 pt-8 pb-3 sm:px-10 sm:pt-10 sm:pb-0">
+            <h3 class="mt-2 text-3xl font-medium tracking-tight max-lg:text-center">Fotografia produktowa</h3>
+            <p class="mt-2 max-w-lg max-lg:text-center">Zobaczysz Twoje produkty w zaskakujących aranżacjach, które przyciągną uwagę klientów.</p>
+          </div>
+          <div class="flex flex-1 items-bottom justify-center mt-10 overflow-hidden">
+            <Image src={ServicesImagePhoto} alt="Product photography example" class="h-full w-full object-cover" />
+          </div>
+        </div>
+        <div class="pointer-events-none absolute inset-px rounded-lg shadow-sm outline outline-black/5"></div>
+      </div>
+      <div class="relative gsapanim">
+        <div class="absolute inset-px rounded-lg bg-white"></div>
+        <div class="relative flex h-full flex-col justify-between overflow-hidden bg-[var(--card-background-color)] rounded-[calc(var(--radius-lg)+1px)]">
+          <div class="px-8 pt-8 sm:px-10 sm:pt-10">
+            <h3 class="mt-2 text-3xl font-medium tracking-tight max-lg:text-center">Video reklamowe</h3>
+            <p class="mt-2 max-w-lg max-lg:text-center">Poruszą Cię historie opowiedziane za pomocą kinowych ujęć, dynamicznego montażu i profesjonalnej postprodukcji.</p>
+          </div>
+          <div class="flex flex-col justify-bottom items-bottom justify-center mt-10 overflow-hidden">
+            <Image src={ServicesImageVideo} alt="Video production example" class="w-full" />
+          </div>
+        </div>
+        <div class="pointer-events-none absolute inset-px rounded-lg shadow-sm outline outline-black/5"></div>
+      </div>
+      <div class="relative gsapanim">
+        <div class="absolute inset-px rounded-lg bg-white max-lg:rounded-b-4xl lg:rounded-br-4xl"></div>
+        <div class="relative flex h-full flex-col overflow-hidden bg-[var(--card-background-color)] rounded-[calc(var(--radius-lg)+1px)] lg:rounded-br-[calc(2rem+1px)] max-lg:rounded-b-[calc(2rem+1px)]">
+          <div class="px-8 pt-8 sm:px-10 sm:pt-10">
+            <h3 class="mt-2 text-3xl font-medium tracking-tight max-lg:text-center">Profile i reklamy social media</h3>
+            <p class="mt-2 max-w-lg max-lg:text-center">Dowiesz się, jak skutecznie budować zaangażowaną społeczność wokół Twojej marki oraz jak tworzyć reklamy, które przyciągają uwagę i generują sprzedaż.</p>
+          </div>
+          <div class="@container flex items-bottom mt-10 items-center object-cover">
+            <Image src={ServicesImageSocial} alt="Social media profile and ads example" class="w-full" />
+          </div>
+      </div>
+      <div class="pointer-events-none absolute inset-px rounded-lg shadow-sm outline outline-black/5 lg:rounded-br-4xl max-lg:rounded-b-4xl"></div>
+    </div>
+    </div>
+  </div>
+</section>
+  <ContentMedia imgSrc="/kosma-carmen-2022-autoportret-full-h800.webp">
+    <Heading level="h2" class="lineheight1">Kosma Carmen Kurłowicz</Heading>
+    <p class="text-2xl">
+      Business Consultant | Filmmaker | Experienced in Design & Marketing
+    </p>
+    <Accordion>
+    <AccordionItem name="exclusive" title="Wykształcenie" variant="chevron" class="font-semibold">
+      <ul role="list" class="divide-y">
+  <li class="flex justify-between gap-x-6 py-5">
+    <div class="flex min-w-0 gap-x-4">
+      <div class="bullet"></div>
+      <div class="min-w-0 flex-auto">
+        <p class="text-sm/6 font-semibold">Uniwersytet Jagielloński</p>
+        <p class="mt-1 truncate text-xs/5">Porównawcze Studia Cywilizacji</p>
+      </div>
+    </div>
+    <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
+      <p class="text-sm/6">Magister</p>
+      <p class="mt-1 text-xs/5"><time datetime="">wrzesień 2007 / maj 2012</time></p>
+    </div>
+  </li>
+            </ul>
+</AccordionItem>
+<AccordionItem name="exclusive" title="Prace dyplomowe" variant="chevron" class="font-semibold">
+<ul role="list" class="divide-y">
+  <li class="flex justify-between gap-x-6 py-5">
+    <div class="flex min-w-0 gap-x-4">
+      <div class="bullet"></div>
+      <div class="min-w-0 flex-auto">
+        <p class="text-sm/6 font-semibold">Samochód w reklamie. Przekaz reklamowy jako reprezentacja mitycznej narracji.</p>
+        <p class="mt-1 truncate text-xs/5">Uniwersytet Jagielloński</p>
+      </div>
+    </div>
+  </li>
+    <li class="flex justify-between gap-x-6 py-5">
+    <div class="flex min-w-0 gap-x-4">
+      <div class="bullet"></div>
+      <div class="min-w-0 flex-auto">
+        <p class="text-sm/6 font-semibold">Fundmentalizm islamski w interpretacji Bassama Tibi.</p>
+        <p class="mt-1 truncate text-xs/5">Uniwersytet Jagielloński</p>
+      </div>
+    </div>
+  </li>
+            </ul>
+          </AccordionItem>
+          <AccordionItem name="exclusive" title="Doświadczenie zawodowe" variant="chevron" class="font-semibold">
+<ul role="list" class="divide-y">
+  <li class="flex justify-between gap-x-6 py-5">
+    <div class="flex min-w-0 gap-x-4">
+      <div class="bullet"></div>
+      <div class="min-w-0 flex-auto">
+        <p class="text-sm/6 font-semibold">Operations Manager</p>
+        <p class="mt-1 truncate text-xs/5">Malwina Jachimczak Contemporary Painter</p>
+      </div>
+    </div>
+    <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
+      <p class="text-sm/6">Success Fee</p>
+      <p class="mt-1 text-xs/5">od sierpnia 2025</p>
+    </div>
+  </li>
+  <li class="flex justify-between gap-x-6 py-5">
+    <div class="flex min-w-0 gap-x-4">
+      <div class="bullet"></div>
+      <div class="min-w-0 flex-auto">
+        <p class="text-sm/6 font-semibold">Photographer, Videographer & Video Editor</p>
+        <p class="mt-1 truncate text-xs/5 ">chascosmos.pl</p>
+      </div>
+    </div>
+    <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
+      <p class="text-sm/6">JDG</p>
+      <p class="mt-1 text-xs/5">od czerwca 2024</p>
+    </div>
+  </li>
+    <li class="flex justify-between gap-x-6 py-5">
+    <div class="flex min-w-0 gap-x-4">
+      <div class="bullet"></div>
+      <div class="min-w-0 flex-auto">
+        <p class="text-sm/6 font-semibold">Head of Operations</p>
+        <p class="mt-1 truncate text-xs/5 ">Veganetti</p>
+      </div>
+    </div>
+    <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
+      <p class="text-sm/6">Sp. z o.o.</p>
+      <p class="mt-1 text-xs/5">od listopada 2023 do czerwca 2024</p>
+    </div>
+  </li>
+    <li class="flex justify-between gap-x-6 py-5">
+    <div class="flex min-w-0 gap-x-4">
+      <div class="bullet"></div>
+      <div class="min-w-0 flex-auto">
+        <p class="text-sm/6 font-semibold">Graphic Designer & WordPress Developer</p>
+        <p class="mt-1 truncate text-xs/5">chascosmos.pl</p>
+      </div>
+    </div>
+    <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
+      <p class="text-sm/6">JDG Part-time</p>
+      <p class="mt-1 text-xs/5">od listopada 2015 do czerwca 2023</p>
+    </div>
+  </li>
+  <li class="flex justify-between gap-x-6 py-5">
+    <div class="flex min-w-0 gap-x-4">
+      <div class="bullet"></div>
+      <div class="min-w-0 flex-auto">
+        <p class="text-sm/6 font-semibold">Jewellry Maker</p>
+        <p class="mt-1 truncate text-xs/5 ">undisclosed UK company</p>
+      </div>
+    </div>
+    <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
+      <p class="text-sm/6">JDG Part-time</p>
+      <p class="mt-1 text-xs/5">od listopada 2015 do czerwca 2021</p>
+    </div>
+  </li>
+  <li class="flex justify-between gap-x-6 py-5">
+    <div class="flex min-w-0 gap-x-4">
+      <div class="bullet"></div>
+      <div class="min-w-0 flex-auto">
+        <p class="text-sm/6 font-semibold">Sprzedawca</p>
+        <p class="mt-1 truncate text-xs/5 ">Sexy Shop Kraków</p>
+      </div>
+    </div>
+    <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
+      <p class="text-sm/6">UZ</p>
+      <p class="mt-1 text-xs/5">od stycznia 2016 do września 2016</p>
+    </div>
+  </li>
+  <li class="flex justify-between gap-x-6 py-5">
+    <div class="flex min-w-0 gap-x-4">
+      <div class="bullet"></div>
+      <div class="min-w-0 flex-auto">
+        <p class="text-sm/6 font-semibold">Piekarz / Sprzedawca</p>
+        <p class="mt-1 truncate text-xs/5 ">Cinnabon Kraków Rynek Główny</p>
+      </div>
+    </div>
+    <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
+      <p class="text-sm/6">UZ</p>
+      <p class="mt-1 text-xs/5">od listopada 2014 do czerwca 2015</p>
+    </div>
+  </li>
+</ul>
+          </AccordionItem>
+        </Accordion>
+  </ContentMedia>
+<section class="my-64" id="pricing">
+    </div>
+  <div class="relative isolate">
+  <div aria-hidden="true" class="absolute inset-x-0 -top-3 -z-10 transform-gpu overflow-hidden px-36 blur-3xl">
+    <div style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)" class="mx-auto aspect-1155/678 w-288.75 bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-30"></div>
+  </div>
+  <div class="mx-auto max-w-4xl text-center">
+    <h2 class="text-base/7 font-semibold">Cennik</h2>
+    <p class="mt-2 text-5xl font-semibold tracking-tight text-balance sm:text-6xl">Wybierz model współpracy najlepszy dla Ciebie</p>
+  </div>
+  <p class="mx-auto mt-6 max-w-2xl text-center text-lg font-medium text-pretty sm:text-xl/8">Choose an affordable plan that's packed with the best features for engaging your audience, creating customer loyalty, and driving sales.</p>
+  <div class="mx-auto mt-16 grid max-w-lg grid-cols-1 items-center gap-y-6 sm:mt-20 sm:gap-y-0 lg:max-w-4xl lg:grid-cols-2 text-gray-900">
+    <div class="rounded-3xl rounded-t-3xl p-8 ring-1 bg-white/90 ring-gray-900/10 sm:mx-8 sm:rounded-b-none sm:p-10 lg:mx-0 lg:rounded-tr-none lg:rounded-bl-3xl gsapanim">
+      <h3 id="tier-hobby" class="text-base/7 font-semibold text-indigo-600">Prosto</h3>
+      <p class="mt-4 flex items-baseline gap-x-2">
+        <span class="text-5xl font-semibold tracking-tight">200 zł z VAT</span>
+        <span class="text-base ">/ godzinę</span>
+      </p>
+      <p class="mt-6 text-base/7 ">Podstawowy model, jeśli potrzebujesz konkretnych rozwiązań.</p>
+      <ul role="list" class="mt-8 space-y-3 text-sm/6 sm:mt-10">
+        <li class="flex gap-x-3">
+          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="h-6 w-5 flex-none text-indigo-600">
+            <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+          </svg>
+          25 products
+        </li>
+        <li class="flex gap-x-3">
+          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="h-6 w-5 flex-none text-indigo-600">
+            <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+          </svg>
+          Up to 10,000 subscribers
+        </li>
+        <li class="flex gap-x-3">
+          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="h-6 w-5 flex-none text-indigo-600">
+            <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+          </svg>
+          Advanced analytics
+        </li>
+        <li class="flex gap-x-3">
+          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="h-6 w-5 flex-none text-indigo-600">
+            <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+          </svg>
+          24-hour support response time
+        </li>
+      </ul>
+      <a href="#" aria-describedby="tier-hobby" class="mt-8 block rounded-md px-3.5 py-2.5 text-center text-sm font-semibold text-indigo-600 inset-ring inset-ring-indigo-200 hover:inset-ring-indigo-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 sm:mt-10">Get started today</a>
+    </div>
+    <div class="relative rounded-3xl bg-gray-900 p-8 shadow-2xl ring-1 ring-gray-900/10 sm:p-10 gsapanim">
+      <h3 id="tier-enterprise" class="text-base/7 font-semibold text-indigo-400">Elastycznie</h3>
+      <p class="mt-4 flex items-baseline gap-x-2">
+        <span class="text-5xl font-semibold tracking-tight text-white">Ty ustalasz budżet i cel, ja </span>
+      </p>
+      <p class="mt-6 text-base/7 text-gray-300">Jeśli zależy Ci na ...</p>
+      <ul role="list" class="mt-8 space-y-3 text-sm/6 text-gray-300 sm:mt-10">
+        <li class="flex gap-x-3">
+          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="h-6 w-5 flex-none text-indigo-400">
+            <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+          </svg>
+          Unlimited products
+        </li>
+        <li class="flex gap-x-3">
+          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="h-6 w-5 flex-none text-indigo-400">
+            <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+          </svg>
+          Unlimited subscribers
+        </li>
+        <li class="flex gap-x-3">
+          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="h-6 w-5 flex-none text-indigo-400">
+            <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+          </svg>
+          Advanced analytics
+        </li>
+        <li class="flex gap-x-3">
+          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="h-6 w-5 flex-none text-indigo-400">
+            <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+          </svg>
+          Dedicated support representative
+        </li>
+        <li class="flex gap-x-3">
+          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="h-6 w-5 flex-none text-indigo-400">
+            <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+          </svg>
+          Marketing automations
+        </li>
+        <li class="flex gap-x-3">
+          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="h-6 w-5 flex-none text-indigo-400">
+            <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+          </svg>
+          Custom integrations
+        </li>
+      </ul>
+      <a href="#" aria-describedby="tier-enterprise" class="mt-8 block rounded-md bg-indigo-500 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 sm:mt-10">Get started today</a>
+    </div>
+  </div>
+</div>
+</section>
+  <section class="my-64">
+    <div class="container">
+      <Heading level="h2" class="mb-6">Spektrum praktycznego doświadczenia z...</Heading>
+      <div class="flex flex-wrap gap-2">
+          <Heading level="h6">Języki programowania:</Heading>
+          <Badge type="default">HTML</Badge>
+          <Badge type="default">CSS</Badge>
+          <Badge type="default">PHP</Badge>
+          <Badge type="default">JavaScript</Badge>
+          <Badge type="default">SQL</Badge>
+          <Heading level="h6">Kontrola wersji:</Heading>
+          <Badge type="default">git</Badge>
+          <Badge type="default">GitHub</Badge>
+          <Heading level="h6">Systemy CMS:</Heading>
+          <Badge type="default">WordPress</Badge>
+          <Badge type="default">NetlifyCMS</Badge>
+          <Badge type="default">MDX</Badge>
+          <Heading level="h6">Frameworki web:</Heading>
+          <Badge type="default">Astro</Badge>
+          <Badge type="default">Next JS</Badge>
+          <Heading level="h6">Hosting:</Heading>
+          <Badge type="default">Netcup</Badge>
+          <Badge type="default">Hetzner</Badge>
+          <Badge type="default">Plesk</Badge>
+          <Badge type="default">Vercel</Badge>
+          <Badge type="default">Cloudflare Pages</Badge>
+          <Badge type="default">Netlify</Badge>
+          <Badge type="default">Digital Ocean</Badge>
+          <Badge type="default">Vultr</Badge>
+          <Heading level="h6">E-commerce:</Heading>
+          <Badge type="default">WooCommerce</Badge>
+          <Badge type="default">Shopify</Badge>
+          <Heading level="h6">Platformy reklamowe:</Heading>
+          <Badge type="default">Google Ads</Badge>
+          <Badge type="default">Meta Ads</Badge>
+          <Heading level="h6">Systemy analityczne:</Heading>
+          <Badge type="default">Google Analytics</Badge>
+          <Badge type="default">Microsoft Clarity</Badge>
+          <Heading level="h6">CDN:</Heading>
+          <Badge type="default">Cloudflare</Badge>
+          <Badge type="default">Bunny</Badge>
+          <Heading level="h6">Edycja foto:</Heading>
+          <Badge type="default">Adobe Photoshop</Badge>
+          <Badge type="default">Affinity</Badge>
+          <Badge type="default">GIMP</Badge>
+          <Heading level="h6">Projektowanie graficzne:</Heading>
+          <Badge type="default">Adobe Illustrator</Badge>
+          <Badge type="default">Affinity</Badge>
+          <Badge type="default">Inkscape</Badge>
+          <Heading level="h6">Edycja video:</Heading>
+          <Badge type="default">Blackmagic Davinci Resolve</Badge>
+          <Heading level="h6">Produkcja audio:</Heading>
+          <Badge type="default">Loopcloud</Badge>
+          <Heading level="h6">Platformy AI:</Heading>
+          <Badge type="default">fal</Badge>
+          <Heading level="h6">Modele AI:</Heading>
+          <Badge type="default">Kling</Badge>
+          <Badge type="default">Runway ML</Badge>
+          <Badge type="default">Topaz</Badge>
+          <Heading level="h6">Platformy software AI:</Heading>
+          <Badge type="default">v0</Badge>
+          <Badge type="default">Base44</Badge>
+          <Heading level="h6">Systemy biznesowe:</Heading>
+          <Badge type="default">Business Model Canvas</Badge>
+      </div>
+    </div>
+  </section>
+  <!-- <FeaturedProjects /> -->
+  <!-- <FeaturedArticles /> -->
+  <!-- <section class="my-64">
+    <div class="container grid grid-cols-1 gap-12 md:grid-cols-2">
+      <div class="flex flex-col items-start gap-4">
+        <Heading level="h2">FAQ</Heading>
+        <p class="text-2xl">
+          This section demonstrates how to effectively use the Accordion component to organize and display frequently
+          asked questions in an accessible and user-friendly way.
+        </p>
+        <Link href="/faq" isButton type="primary" animateOnHover animationType="boop">
+          <Icon aria-hidden="true" name="lucide:headset" size=" 1.5rem" />
+          Contact support team
+        </Link>
+      </div>
+      <div class="space-content">
+        <Accordion>
+          <AccordionItem name="exclusive" title="What is WCAG and why is it important?" open>
+            <p>
+              WCAG (Web Content Accessibility Guidelines) is a set of internationally recognized standards for web
+              accessibility. Following WCAG ensures your website is usable by people with various disabilities,
+              including visual, auditory, physical, and cognitive impairments. It's important not just for
+              accessibility, but also for legal compliance, SEO, and reaching a wider audience.
+            </p>
+          </AccordionItem>
+          <AccordionItem name="exclusive" title="What's the difference between ARIA labels and alt text?">
+            <p>
+              Alt text is specifically for describing images to screen reader users, while ARIA labels (aria-label,
+              aria-labelledby) can describe any element on a page. Alt text is HTML's native way to provide alternative
+              text for images, while ARIA labels are part of the ARIA specification that helps make dynamic content and
+              advanced UI controls more accessible.
+            </p>
+          </AccordionItem>
+          <AccordionItem name="exclusive" title="Why is keyboard navigation important?">
+            <p>
+              Keyboard navigation is essential for users who can't use a mouse, including people with motor
+              disabilities, visual impairments, or those who simply prefer keyboard controls. A website should be fully
+              operable using only a keyboard, with visible focus indicators and logical tab order. This includes being
+              able to access all interactive elements and navigate through content efficiently.
+            </p>
+          </AccordionItem>
+          <AccordionItem name="exclusive" title="What is a sufficient color contrast ratio?">
+            <p>
+              According to WCAG 2.2 AA standards, text should have a minimum contrast ratio of 4.5:1 against its
+              background for regular text, and 3:1 for large text (18pt or 14pt bold). For non-text elements like icons
+              or buttons, a minimum ratio of 3:1 is required. This ensures content is readable for users with visual
+              impairments or color blindness.
+            </p>
+          </AccordionItem>
+          <AccordionItem name="exclusive" title="How do I make custom components accessible?">
+            <p>
+              To make custom components accessible, focus on these key aspects: use semantic HTML where possible,
+              implement proper keyboard support, add appropriate ARIA attributes, manage focus when needed, and ensure
+              adequate color contrast. Always test with screen readers and keyboard navigation. Consider using
+              established design patterns from the <Link href="https://www.w3.org/WAI/ARIA/apg/patterns/"
+                >ARIA Authoring Practices Guide</Link
+              >.
+            </p>
+          </AccordionItem>
+        </Accordion>
+      </div>
+    </div>
+  </section> -->
+  <section class="mt-64 mb-32">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="max-w-2xl lg:mx-0">
+      <h2>Referencje</h2>
+    </div>
+    <div class="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+  <Testimonials name="Witold" position="Project Manager | Experienced sales director and managing director (Premiera, GAZ, InterCars S.A.)" testimonial="&quot;I worked with Kosma on a marketing project. It was a demanding assignment, carried out under extreme time pressure and with no room for error. Thanks to his openness and strong focus on the goal, we managed to complete it efficiently. I especially appreciate his flexibility and reliability, qualities that are increasingly rare these days and which Kosma clearly shows. The best show their strength in difficult conditions.&quot;" icon="/images/testimonials/ws-1654123590635.jpg" />
+  <Testimonials name="Beata" position="Global Head of Securities, Pricing and Events (Citibank Europe Plc Poland Branch)" testimonial="&quot;I had the pleasure of working with Kosma Kurłowicz on an animal welfare campaign in Olsztyn, where he created a full series of multimedia assets for social media — from concept and script to visuals and final editing. Kosma is a creative, responsible and ethics-driven Multimedia Content Creator who combines AI tools with great design sense and authenticity. Kosma creates trend-conscious yet neutral content without overuse of AI or artificial hype. He is also an active animal welfare volunteer. I recommend him wholeheartedly.&quot;" icon="/images/testimonials/bk-1652804981971.jpg" />
+  <Testimonials name="Loïc" position="Minority Rights Group" testimonial="&quot;Kosma developed a beautiful website for us two years ago. The design, user experience and general architecture of the website are great. Recently, as we were experiencing server issues, Kosma generously stepped in to help, despite her contract having ended. The website got fixed in no time. Definitely recommended!&quot;" icon="/images/testimonials/nik-iurev-7h82oLj3GA0-unsplash.webp" />
+  <Testimonials name="Justyna" position="Uniwersytet Jagielloński" testimonial="&quot;The cooperation went smoothly, although the project itself was quite abstract in terms of the aesthetic concept and content of the website. It was easy to communicate with the team to discuss the site's functionalities in detail. We wanted the website to be professional and transparent, but still interesting. And that's what she is! We also have no problems with its operation, and operating its functionality from the administrator level is very intuitive. If I need to introduce new content to the website, I know that I can do it quickly and the whole thing will always look good and consistent.&quot;" icon="/images/testimonials/nik-iurev-7h82oLj3GA0-unsplash.webp" />
+  <Testimonials name="Ewa" position="Fundacja Albatros" testimonial="&quot;I have been running the foundation for 15 years. During this time, I have had the opportunity to work with many contractors. Kosma from Chaos&Cosmos focuses primarily on the effect we are striving for, not on the remuneration, which is never high. He knows how to listen and ask questions that redefine the problem. He finds solutions. Chaos&Cosmos created websites for the Albatros Foundation, designed visual identification and organized international conferences, prepared media for printing. The effect of their work always exceeds my expectations.&quot;" icon="/images/testimonials/nik-iurev-7h82oLj3GA0-unsplash.webp" />
+  <Testimonials name="Magdalena" position="Instytut Kultury Miejskiej w Gdańsku" testimonial="&quot;Thank you for the great cooperation! Kosma Kurłowicz and his team prepared a website for one of our research projects. We are very pleased with the final result, Kosma is very objective, specific and communicative. We recommend 🙂 Positive: Responsiveness, Quality, Professionalism, Value.&quot;" icon="/images/testimonials/nik-iurev-7h82oLj3GA0-unsplash.webp" />
+    </div>
+</div>
+  </section>
+  <!--<section class="mt-64 mb-32">
+    <div class="container">
+      <Heading level="h2" class="mb-16">Impact in numbers</Heading>
+      <div class="grid grid-cols-1 gap-12 sm:grid-cols-2 md:grid-cols-4">
+        <Counter count="7" title="Start-upów" sub="na karku" />
+        <Counter count="25+" title="Godzin" sub="uczestnictwa w szkoleniach" />
+        <Counter count="400+" title="Commits" sub="Merged" />
+        <Counter count="48+" title="Months" sub="Since launch" />
+      </div>
+    </div>
+  </section>-->
+</DefaultLayout>
+
+<style>
+  .avatar {
+    border: 1px solid var(--border-color-subtle);
+    border-radius: var(--radius-md);
+    padding: var(--space-s);
+  }
+  .lineheight1 {
+    line-height: 1 !important;
+  }
+  .bdoted {
+    border-bottom: 1px dashed red;
+  }
+
+@keyframes moveeyehorizontal {
+0% {
+    transform: translateX(0);
+}
+50% {
+    transform: translateX(2rem); 
+}
+100% {
+    transform: translateX(0 );
+}
+  }
+
+@keyframes rotateeye {
+0% {
+    transform: rotate(0deg);
+}
+50% {
+    transform: rotate(12deg); 
+}
+100% {
+    transform: rotate(0deg);
+}
+}
+
+#eye-ball
+ {
+    position: absolute;
+    top: 66px;
+    left: 0px;
+    animation-duration: 12s;
+    animation-name: moveeyehorizontal;
+    animation-iteration-count: infinite;
+}
+
+#eye-open {
+    filter: drop-shadow(rgba(83, 83, 83, 0.54) 0.5rem 1rem 0.5rem);
+    animation-duration: 6s;
+    animation-name: rotateeye;
+    animation-iteration-count: infinite;
+    z-index: 30;
+}
+
+#eye-center {
+  width: 6rem;
+  height: auto;
+    top: 7rem;
+    position: absolute;
+    left: 40%;
+}
+
+  .bullet {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 9999px;
+      background-image: linear-gradient(
+      315deg,
+      light-dark(var(--color-primary-100), var(--color-secondary-100)) 25%,
+      light-dark(var(--color-secondary-100), var(--color-primary-200))
+    );
+  }
+</style>
+
+<script>
+  import { gsap } from 'gsap'
+  import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+  gsap.registerPlugin(ScrollTrigger)
+
+  // Animate widgets on scroll
+  // Animate white background widgets
+  gsap.utils.toArray('.gsapanim').forEach((widget: any) => {
+  gsap.from(widget, {
+  y: 50,
+  opacity: 0,
+  duration: 1,
+  scrollTrigger: {
+  trigger: widget,
+  start: 'top bottom-=100',
+  toggleActions: 'play none none reverse',
+  },
+  })
+  })
+
+  // // Animate achievements widget
+  // gsap.utils.toArray('.bg-gradient-to-r').forEach((widget: any) => {
+  //   gsap.from(widget, {
+  //     y: 50,
+  //     opacity: 0,
+  //     duration: 1,
+  //     scrollTrigger: {
+  //       trigger: widget,
+  //       start: 'top bottom-=100',
+  //       toggleActions: 'play none none reverse',
+  //     },
+  //   })
+  // })
+</script>
+
+<script src="../src/assets/scripts/termynal.js" data-termynal-container="#termynal"></script>

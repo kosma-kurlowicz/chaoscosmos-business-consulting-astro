@@ -1,0 +1,15 @@
+.badge.size-md {
+    display: block;
+    padding: 0.25em 0.4em 0.1em 0.4em !important;
+    font-size: 75%;
+    font-weight: 700;
+    text-align: center;
+    white-space: nowrap;
+    border-radius: 0.375rem;
+    color: var(--color-neutral-900);
+    background-color: var(--color-neutral-100);
+}
+
+li.font-semibold h3 {
+    font-weight: 600 !important;
+}

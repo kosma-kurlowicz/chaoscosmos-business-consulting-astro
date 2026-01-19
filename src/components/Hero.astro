@@ -1,0 +1,140 @@
+---
+import { Badge } from 'accessible-astro-components'
+import { Icon } from 'astro-icon/components'
+import { Image } from 'astro:assets'
+import SlideImage1 from '../assets/img/pexels-kosma-kurlowicz-1051820-2029647.jpg'
+import SlideImage2 from '../assets/img/pexels-kosma-kurlowicz-1051820-2062324.jpg'
+import SlideImage3 from '../assets/img/pexels-kosma-kurlowicz-1051820-2184142.jpg'
+import SlideImage4 from '../assets/img/pexels-kosma-kurlowicz-1051820-2029355.jpg'
+import SlideImage5 from '../assets/img/pexels-kosma-kurlowicz-1051820-2056420.jpg'
+import SlideImage6 from '../assets/img/veganetti-bag.webp'
+import SlideImage7 from '../assets/img/chaoscosmos_7up-full-DSC2859-h2400.webp'
+import SlideImage8 from '../assets/img/chaoscosmos-interior-mockup-cover-w2560.jpg'
+import SlideImage9 from '../assets/img/veganetti-nzuddi-siciliani-v2_IGP9288-h1200.webp'
+import SlideImage10 from '../assets/img/symbiosis-2019-poster-destructive-power-visual-h2560.webp'
+import SlideImage11 from '../assets/img/chaoscosmos-symbiosis2019-mockup-baner-1-w2560-scaled-1.webp'
+import SlideImage12 from '../assets/img/chaoscosmos-roi2023-mockup-cover-w2560.webp'
+import SlideImage13 from '../assets/img/antilica-americana-03-logo-website00086431.webp'
+import SlideImage14 from '../assets/img/chsoscosmos-rabarbar-lizards-video-cover-v11.webp'
+import SlideImage15 from '../assets/img/chaoscosmos-mikro-001.webp'
+import SlideImage16 from '../assets/img/chaoscosmos-onebee-033.webp'
+import SlideImage17 from '../assets/img/chaoscosmos-plantoholic.webp'
+import SlideImage18 from '../assets/img/chaoscosmos-pzk-010.webp'
+import SlideImage19 from '../assets/img/chaoscosmos-secret-garden-020.webp'
+import SlideImage20 from '../assets/img/chaoscosmos-ceramika-029.webp'
+import "@splidejs/splide/css"
+import { SplideExtension, SplideSlide } from 'astro-splide'
+import type { Options } from '@splidejs/splide'
+const options: Options = {
+  type   : 'loop',
+  drag   : 'free',
+  focus  : 'center',
+  gap: '1rem',
+  arrows: false,
+  pagination: true,
+  perPage: 8,
+  autoScroll: {
+    speed: 0.4,
+  },
+  breakpoints: {
+    920: {
+			perPage: 4,
+		},
+		640: {
+			perPage: 2,
+		},
+  }
+}
+
+/**
+ * Hero Component
+ *
+ * @description A component that displays a hero section with a title, description, and image
+ */
+interface Props {
+  /**
+   * The source URL for the image
+   */
+  src?: string
+}
+---
+
+<section class="hero w-full p-[4rem] max-w-full">
+<div class="relative isolate">
+  <div aria-hidden="true" class="absolute inset-x-0 -top-3 -z-10 transform-gpu overflow-hidden px-36 blur-3xl">
+    <div style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)" class="mx-auto aspect-1155/678 w-288.75 bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-40">
+    </div>
+  </div>
+  <div class="container">
+    <div class="flex flex-col items-center gap-4 lg:grid-cols-2">
+        <h1 class="text-center text-6xl lg:text-8xl">
+          <slot><span>Wszechstronny</span><br> consulting biznesowy</slot>
+        </h1>
+          <!-- <Link
+            href="https://github.com/incluud/accessible-astro-starter"
+            isButton
+            animateOnHover
+            animationType="boop"
+          >
+            <Icon aria-hidden="true" name="lucide:mail" size="1.5rem" />
+            Skontaktuj się
+          </Link>-->
+ <!-- <Image class="hidden lg:block" src={src} alt="" decoding="async" width={800} height={600} loading="eager" /> -->
+          <div class="flex flex-row items-center gap-4 flex-wrap justify-center m-4">
+            <Badge type="default" size="lg">brand</Badge>
+            <Badge type="default" size="lg">web</Badge>
+            <Badge type="default" size="lg">design</Badge>
+            <Badge type="default" size="lg">photo</Badge>
+            <Badge type="default" size="lg">video</Badge>
+            <Badge type="default" size="lg">marketing</Badge>
+          </div>
+  </div>
+</div>
+</section>
+<div class="w-full">
+  <SplideExtension options={options}>
+    <SplideSlide><Image src={SlideImage1} alt="A description of my image." height={520} /></SplideSlide>
+    <SplideSlide><Image src={SlideImage2} alt="A description of my image." height={520} /></SplideSlide>
+    <SplideSlide><Image src={SlideImage3} alt="A description of my image." height={520} /></SplideSlide>
+    <SplideSlide><Image src={SlideImage6} alt="A description of my image." height={520} /></SplideSlide>
+    <SplideSlide><Image src={SlideImage4} alt="A description of my image." height={520} /></SplideSlide>
+    <SplideSlide><Image src={SlideImage5} alt="A description of my image." height={520} /></SplideSlide>
+    <SplideSlide><Image src={SlideImage7} alt="A description of my image." height={520} /></SplideSlide>
+    <SplideSlide><Image src={SlideImage8} alt="A description of my image." height={520} /></SplideSlide>
+    <SplideSlide><Image src={SlideImage9} alt="A description of my image." height={520} /></SplideSlide>
+    <SplideSlide><Image src={SlideImage10} alt="A description of my image." height={520} /></SplideSlide>
+    <SplideSlide><Image src={SlideImage11} alt="A description of my image." height={520} /></SplideSlide>
+    <SplideSlide><Image src={SlideImage12} alt="A description of my image." height={520} /></SplideSlide>
+    <SplideSlide><Image src={SlideImage13} alt="A description of my image." height={520} /></SplideSlide>
+    <SplideSlide><Image src={SlideImage14} alt="A description of my image." height={520} /></SplideSlide>
+    <SplideSlide><Image src={SlideImage15} alt="A description of my image." height={520} /></SplideSlide>
+    <SplideSlide><Image src={SlideImage16} alt="A description of my image." height={520} /></SplideSlide>
+    <SplideSlide><Image src={SlideImage17} alt="A description of my image." height={520} /></SplideSlide>
+    <SplideSlide><Image src={SlideImage18} alt="A description of my image." height={520} /></SplideSlide>
+    <SplideSlide><Image src={SlideImage19} alt="A description of my image." height={520} /></SplideSlide>
+    <SplideSlide><Image src={SlideImage20} alt="A description of my image." height={520} /></SplideSlide>
+  </SplideExtension>
+</div> 
+
+<style lang="scss">
+  h1 {
+    text-wrap: unset;
+  }
+
+  .text-gradient {
+    background: linear-gradient(
+      315deg,
+      light-dark(var(--color-primary-300), var(--color-secondary-100)) 25%,
+      light-dark(var(--color-secondary-300), var(--color-primary-200))
+    );
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+</style>
+
+<script>
+    import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
+    import { initSplideExtension } from "astro-splide/js/splideExtensionUtils"
+    initSplideExtension({AutoScroll})
+ </script>

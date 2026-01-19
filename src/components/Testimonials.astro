@@ -1,0 +1,66 @@
+---
+import { Heading } from 'accessible-astro-components'
+import { Icon } from 'astro-icon/components'
+
+/**
+ * Feature Component
+ *
+ * @description A component that displays a feature with an icon, title, and description
+ */
+interface Props {
+  /**
+   * The icon to display
+   */
+  icon: string
+  /**
+   * The title to display
+   */
+  name: string
+    /**
+   * The title to display
+   */
+  position: string
+      /**
+   * The title to display
+   */
+  testimonial: string
+}
+
+const {
+    icon = 'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    name = 'John Doe',
+    position = 'Position',
+    testimonial = 'Some testimonials'
+    }: Props = Astro.props
+---
+<div class="flex max-w-xl flex-col items-start justify-between gsapanim">
+    <div class="flex items-center gap-x-4">
+          <!-- <p class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium hover:bg-gray-100">Marketing</p> -->
+        </div>
+        <div class="group relative">
+          <p class="mt-5 italic text-base">{testimonial}</p>
+        </div>
+        <div class="relative mt-8 flex items-center gap-x-4 justify-self-end">
+          <img src={icon} alt="" class="size-10 rounded-full bg-gray-50" />
+          <div>
+            <p class="font-semibold">
+                <span class="absolute inset-0"></span>
+                {name}
+            </p>
+            <p class="text-sm">{position}</p>
+          </div>
+        </div>
+    </div>
+
+<style>
+  .bullet {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 9999px;
+      background-image: linear-gradient(
+      315deg,
+      light-dark(var(--color-primary-100), var(--color-secondary-100)) 25%,
+      light-dark(var(--color-secondary-100), var(--color-primary-200))
+    );
+  }
+</style>

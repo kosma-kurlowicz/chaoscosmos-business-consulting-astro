@@ -1,0 +1,79 @@
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import PageHeader from '@components/PageHeader.astro'
+import SocialShares from '@components/SocialShares.astro'
+import { Heading } from 'accessible-astro-components'
+import { getCollection, render } from 'astro:content'
+import { slugify } from '@/utils/slugify'
+import type { CollectionEntry } from 'astro:content'
+
+export async function getStaticPaths() {
+  const projects = await getCollection('articles')
+
+  const projectImages = [
+    { src: '/articles/article-1-vanilla-factory-disorted-scaled.webp' },
+    { src: '/projects/project-image-2.png' },
+    { src: '/projects/project-image-3.png' },
+    { src: '/projects/project-image-4.png' },
+    { src: '/projects/project-image-5.png' },
+    { src: '/projects/project-image-6.png' },
+  ]
+
+  return projects.map((article, index) => {
+    const articleSlug = article.data.slug ?? slugify(article.data.title)
+    const projectWithImage = {
+      ...article,
+      featuredImage: projectImages[index % projectImages.length].src,
+      // include slug as a prop so the page can reference it
+      slug: articleSlug,
+    }
+
+    return {
+      params: { article: articleSlug },
+      props: { article: projectWithImage, slug: articleSlug },
+    }
+  })
+}
+
+interface Props {
+  article: CollectionEntry<'articles'> & { featuredImage: string; slug?: string }
+}
+
+const { article } = Astro.props
+const { Content } = await render(article)
+
+const author = {
+  name: article.data.author,
+  image: '/projects/project-image-1.png',
+  bio: 'Article Creator',
+}
+---
+
+<DefaultLayout title={article.data.title} description={article.data.description} url={`/blog/${article.slug}`}>
+  <PageHeader
+    title={article.data.title}
+    subtitle={article.data.description}
+    author={author}
+    bgType="bordered"
+    featuredImage={article.featuredImage}
+  />
+  <section class="my-12">
+    <div class="narrow space-content container">
+      <Content />
+    </div>
+  </section>
+  <section class="my-12">
+    <div class="narrow space-content container">
+      <Heading level="h2">Share this article</Heading>
+      <p>Like this article? Share it with your network!</p>
+      <SocialShares />
+    </div>
+  </section>
+</DefaultLayout>
+
+<style lang="scss" is:global>
+  .narrow {
+    margin-inline: auto;
+    max-width: 65ch;
+  }
+</style>
