@@ -68,11 +68,11 @@ const { page, currentTag, uniqueTags } = Astro.props
 
 <DefaultLayout
   title={`Blog - ${currentTag.label}`}
-  description={`articles filtered by ${currentTag.label} tag. Discover our work in ${currentTag.label} and related technologies.`}
+  description={`artykuły otagowane ${currentTag.label}. Odkryj naszą pracę w kategorii ${currentTag.label} i powiązanych technologiach.`}
 >
   <PageHeader
     title={`Blog: ${currentTag.label}`}
-    subtitle={`Showing ${page.total} article${page.total !== 1 ? 's' : ''} tagged with "${currentTag.label}". <a href="/portfolio">View all projects</a> or filter by other tags below.`}
+    subtitle={`Pokazano ${page.total} artykuł${page.total !== 1 ? 's' : ''} otagowane "${currentTag.label}". <a href="/portfolio">Zobacz wszystkie projekty</a> lub filtrowane po innych tagach poniżej.`}
     bgType="bordered"
     customBreadcrumbLabels={{
       [currentTag.slug]: currentTag.label,
@@ -81,9 +81,9 @@ const { page, currentTag, uniqueTags } = Astro.props
   />
   <section class="my-12">
     <div class="container">
-      <Heading level="h2" size="h5" class="mb-2">Tags</Heading>
+      <Heading level="h2" size="h5" class="mb-2">Tagi</Heading>
       <div class="flex flex-wrap gap-4">
-        <Link href="/blog">All projects</Link>
+        <Link href="/blog">Wszystkie artykuły</Link>
         {
           uniqueTags.map((tag: { label: string; slug: string }) => {
             const isCurrentTag = tag.slug === currentTag.slug
@@ -99,7 +99,7 @@ const { page, currentTag, uniqueTags } = Astro.props
       </div>
       <p class="mt-8 text-sm">
         <em
-          >Article {page.start + 1} through {page.end + 1} of {page.total} total articles tagged with "{
+          >Artykuł {page.start + 1} do {page.end + 1} z {page.total} artykułów otagowanych jako "{
             currentTag.label
           }"</em
         >
@@ -113,7 +113,7 @@ const { page, currentTag, uniqueTags } = Astro.props
                 url={'/blog/' + article.slug}
                 title={article.data.title}
                 headingLevel="h2"
-                footer={'Author: ' + article.data.author}
+                footer={'Autor: ' + article.data.author}
                 fullHeight={true}
               >
                 <span slot="meta">

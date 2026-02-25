@@ -53,16 +53,16 @@ console.log(page.lastPage)
 
 <DefaultLayout
   title="Blog"
-  description="A showcase of articles built with Astro Content Collections, demonstrating dynamic content management."
+  description=""
 >
   <PageHeader
     title="Blog"
-    subtitle='A showcase of articles built with Astro Content Collections, demonstrating dynamic content management and organization. Learn more about <a href="https://docs.astro.build/en/guides/content-collections/">Astro Content Collections</a> in the official documentation.'
+    subtitle=''
     bgType="bordered"
   />
   <section class="my-12">
     <div class="container">
-      <Heading level="h2" size="h5" class="mb-2">Tags</Heading>
+      <Heading level="h2" size="h5" class="mb-2">Tagi</Heading>
       <div class="flex flex-wrap gap-4">
         {
           uniqueTags.map((tag: { label: string; slug: string }) => (
@@ -71,7 +71,7 @@ console.log(page.lastPage)
         }
       </div>
       <p class="mt-8 text-sm">
-        <em>Project {page.start + 1} through {page.end + 1} of {page.total} total articles</em>
+        <em>Projekt {page.start + 1} do {page.end + 1} z {page.total} artykułów</em>
       </p>
       <ul class="mt-3 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {
@@ -82,7 +82,7 @@ console.log(page.lastPage)
                 url={'/blog/' + article.slug}
                 title={article.data.title}
                 headingLevel="h2"
-                footer={'Author: ' + article.data.author}
+                footer={'Autor: ' + article.data.author}
                 fullHeight={true}
               >
                 <span slot="meta">
