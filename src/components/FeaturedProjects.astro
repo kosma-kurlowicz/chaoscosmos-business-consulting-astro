@@ -7,7 +7,7 @@ import { slugify } from '@/utils/slugify'
 // Import images directly for optimization
 import projectImage1 from '@assets/images/projects/roi/chaoscosmos-roi2023-mockup-cover-w2560.webp'
 import projectImage2 from '@assets/images/projects/interior/chaoscosmos-interior-mockup-cover-w2560.webp'
-import projectImage3 from '@assets/images/projects/project-image-3.png'
+import projectImage3 from '@assets/images/projects/symbiosis-planner/chaoscosmos-symbiosis2019-mockup-planner-cover-w2560.webp'
 
 /**
  * FeaturedProjects Component
@@ -46,7 +46,7 @@ const featuredProjects = projects.slice(0, limit).map((project, index) => ({
 }))
 ---
 
-<section class:list={[className, 'my-64']}>
+<section class:list={[className, 'my-32 md:my-64']}>
   <div class="container">
     <Heading level="h2" class="mb-6">{title}</Heading>
     <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
