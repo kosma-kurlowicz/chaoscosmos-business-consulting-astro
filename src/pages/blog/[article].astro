@@ -11,12 +11,7 @@ export async function getStaticPaths() {
   const projects = await getCollection('articles')
 
   const projectImages = [
-    { src: '/articles/article-1-vanilla-factory-disorted-scaled.webp' },
-    { src: '/projects/project-image-2.png' },
-    { src: '/projects/project-image-3.png' },
-    { src: '/projects/project-image-4.png' },
-    { src: '/projects/project-image-5.png' },
-    { src: '/projects/project-image-6.png' },
+    { src: '/articles/article-1-vanilla-factory-disorted-scaled.webp' }
   ]
 
   return projects.map((article, index) => {

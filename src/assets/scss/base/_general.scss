@@ -63,3 +63,20 @@ footer a {
   outline: none;
   box-shadow: none;
 }
+
+article.card {
+    --transition-duration: 0.3s;
+    --transition-easing: cubic-bezier(0.165, 0.84, 0.44, 1);
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    border: 1px solid light-dark(hsl(0 0% 50%), hsl(0 0% 50%)) !important;
+    border-radius: 0.5rem;
+    max-inline-size: 60ch;
+    max-block-size: 100%;
+    overflow: hidden;
+  }
+
+article.card:hover {
+  box-shadow: 0 0 0 0.1rem !important;
+}
