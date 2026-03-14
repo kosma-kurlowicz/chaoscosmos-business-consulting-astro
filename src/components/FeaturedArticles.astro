@@ -6,6 +6,7 @@ import { slugify } from '@/utils/slugify'
 
 // Import images directly for optimization
 import projectImage1 from '@assets/images/articles/article-1-vanilla-factory-disorted-scaled.webp'
+import projectImage2 from '@assets/images/articles/civil-war/vlcsnap-2024-12-12-00h24m38s240.webp'
 
 /**
  * Featured articles Component
@@ -33,7 +34,7 @@ const { class: className, limit = 3, title = 'Artykuły' } = Astro.props
 
 // Get articles from content collection
 const articles = await getCollection('articles')
-const projectImages = [projectImage1]
+const projectImages = [projectImage1, projectImage2]
 
 // Limit projects and add featured images
 const featuredArticles = articles.slice(0, limit).map((article, index) => ({

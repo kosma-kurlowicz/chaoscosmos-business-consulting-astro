@@ -9,6 +9,7 @@ import { slugify } from '@/utils/slugify'
 
 // Import images directly for optimization
 import projectImage1 from '@assets/images/articles/article-1-vanilla-factory-disorted-scaled.webp'
+import projectImage2 from '@assets/images/articles/civil-war/vlcsnap-2024-12-12-00h24m38s240.webp'
 
 export const getStaticPaths = (async ({ paginate }) => {
   const articles = await getCollection('articles')
@@ -19,7 +20,7 @@ export const getStaticPaths = (async ({ paginate }) => {
     slug: slugify(label),
   }))
 
-  const projectImages = [projectImage1]
+  const projectImages = [projectImage1, projectImage2]
 
   const projectsWithImages = articles.map((article, index) => {
     return {
