@@ -50,11 +50,13 @@ const projects = await getCollection('projects')
 const projectImages = [projectImage01, projectImage02, projectImage03, projectImage04, projectImage05, projectImage06, projectImage07, projectImage08, projectImage09, projectImage10, projectImage11, projectImage12, projectImage13, projectImage14, projectImage15]
 
 // Limit projects and add featured images
-const featuredProjects = projects.slice(0, limit).map((project, index) => ({
+const projectsReversed = projects.reverse() // Show most recent projects first
+const projectImagesReversed = projectImages.reverse() // Reverse images to match project order
+const featuredProjects = projectsReversed.slice(0, limit).map((project, index) => ({
   ...project,
   // slug from frontmatter or title
   slug: project.data.slug ?? slugify(project.data.title),
-  featuredImage: projectImages[index % projectImages.length],
+  featuredImage: projectImagesReversed[index % projectImagesReversed.length],
 }))
 ---
 
