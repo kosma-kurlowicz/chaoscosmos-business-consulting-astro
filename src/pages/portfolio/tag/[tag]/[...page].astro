@@ -15,6 +15,7 @@ import projectImage4 from '@assets/images/projects/antilica-jungle/chaoscosmos-a
 import projectImage5 from '@assets/images/projects/veganetti-website/chaoscosmos-veganetti-website-w1920.webp'
 import projectImage6 from '@assets/images/projects/mj-website/chaoscosmos-mj-website-1-w2560.webp'
 import projectImage7 from '@assets/images/projects/antilica-website/chaoscosmos-antilica-website-1-w2560.webp'
+import projectImage8 from '@assets/images/projects/mobilum-website/chaoscosmos-mobilum-website-1-w2560.webp'
 
 import projectImage50 from '@assets/images/projects/kaid/chaoscosmos-kaid-intro.webp'
 
@@ -27,7 +28,7 @@ export const getStaticPaths = (async ({ paginate }) => {
     slug: slugify(label),
   }))
 
-  const projectImages = [projectImage1, projectImage2, projectImage3, projectImage4, projectImage5, projectImage6, projectImage7, projectImage50]
+  const projectImages = [projectImage1, projectImage2, projectImage3, projectImage4, projectImage5, projectImage6, projectImage7, projectImage8, projectImage50]
 
   const projectsWithImages = projects.map((project, index) => {
     return {
