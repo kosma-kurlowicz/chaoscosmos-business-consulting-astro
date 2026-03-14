@@ -18,6 +18,7 @@ import projectImage07 from '@assets/images/projects/antilica-website/chaoscosmos
 import projectImage08 from '@assets/images/projects/mobilum-website/chaoscosmos-mobilum-website-1-w2560.webp'
 import projectImage09 from '@assets/images/projects/artt-website/chaoscosmos-website-artt-w2560.webp'
 import projectImage10 from '@assets/images/projects/kaid/chaoscosmos-kaid-intro.webp'
+import projectImage11 from '@assets/images/projects/acsr-website/chaoscosmos-acsr-website-1-w2560.webp'
 
 export const getStaticPaths = (async ({ paginate }) => {
   const projects = await getCollection('projects')
@@ -28,7 +29,7 @@ export const getStaticPaths = (async ({ paginate }) => {
     slug: slugify(label),
   }))
 
-  const projectImages = [projectImage01, projectImage02, projectImage03, projectImage04, projectImage05, projectImage06, projectImage07, projectImage08, projectImage09, projectImage10]
+  const projectImages = [projectImage01, projectImage02, projectImage03, projectImage04, projectImage05, projectImage06, projectImage07, projectImage08, projectImage09, projectImage10, projectImage11]
 
   const projectsWithImages = projects.map((project, index) => {
     return {
