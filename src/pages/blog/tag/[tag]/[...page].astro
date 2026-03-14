@@ -10,6 +10,7 @@ import { slugify } from '@/utils/slugify'
 // Import images directly for optimization
 import projectImage1 from '@assets/images/articles/article-1-vanilla-factory-disorted-scaled.webp'
 import projectImage2 from '@assets/images/articles/civil-war/vlcsnap-2024-12-12-00h24m38s240.webp'
+import projectImage3 from '@assets/images/articles/filmowo-2025/Screenshot-2024-12-31-182203.webp'
 
 export const getStaticPaths = (async ({ paginate }) => {
   const articles = await getCollection('articles')
@@ -20,21 +21,24 @@ export const getStaticPaths = (async ({ paginate }) => {
     slug: slugify(label),
   }))
 
-  const projectImages = [projectImage1, projectImage2]
+  const projectImages = [projectImage1, projectImage2, projectImage3]
+  const projectImagesReversed = projectImages
 
   const projectsWithImages = articles.map((article, index) => {
     return {
       ...article,
       slug: article.data.slug ?? slugify(article.data.title),
-      featuredImage: projectImages[index % projectImages.length],
+      featuredImage: projectImagesReversed[index % projectImagesReversed.length],
     }
   })
+
+  const projectsWithImagesReversed = projectsWithImages.reverse()
 
   // Generate paginated pages for each tag
   const allPaginatedPages = []
 
   for (const tag of uniqueTags) {
-    const filteredProjects = projectsWithImages.filter((article) =>
+    const filteredProjects = projectsWithImagesReversed.filter((article) =>
       article.data.tags.map((tag) => slugify(tag)).includes(tag.slug),
     )
 
