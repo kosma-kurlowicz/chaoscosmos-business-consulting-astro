@@ -8,16 +8,16 @@ import type { CollectionEntry } from 'astro:content'
 import { slugify } from '@/utils/slugify'
 
 // Import images directly for optimization
-import projectImage1 from '@assets/images/projects/roi/chaoscosmos-roi2023-mockup-cover-w2560.webp'
-import projectImage2 from '@assets/images/projects/interior/chaoscosmos-interior-mockup-cover-w2560.webp'
-import projectImage3 from '@assets/images/projects/symbiosis-planner/chaoscosmos-symbiosis2019-mockup-planner-cover-w2560.webp'
-import projectImage4 from '@assets/images/projects/antilica-jungle/chaoscosmos-antilica-photo-4.webp'
-import projectImage5 from '@assets/images/projects/veganetti-website/chaoscosmos-veganetti-website-w1920.webp'
-import projectImage6 from '@assets/images/projects/mj-website/chaoscosmos-mj-website-1-w2560.webp'
-import projectImage7 from '@assets/images/projects/antilica-website/chaoscosmos-antilica-website-1-w2560.webp'
-import projectImage8 from '@assets/images/projects/mobilum-website/chaoscosmos-mobilum-website-1-w2560.webp'
-
-import projectImage50 from '@assets/images/projects/kaid/chaoscosmos-kaid-intro.webp'
+import projectImage01 from '@assets/images/projects/roi/chaoscosmos-roi2023-mockup-cover-w2560.webp'
+import projectImage02 from '@assets/images/projects/interior/chaoscosmos-interior-mockup-cover-w2560.webp'
+import projectImage03 from '@assets/images/projects/symbiosis-planner/chaoscosmos-symbiosis2019-mockup-planner-cover-w2560.webp'
+import projectImage04 from '@assets/images/projects/antilica-jungle/chaoscosmos-antilica-photo-4.webp'
+import projectImage05 from '@assets/images/projects/veganetti-website/chaoscosmos-veganetti-website-w1920.webp'
+import projectImage06 from '@assets/images/projects/mj-website/chaoscosmos-mj-website-1-w2560.webp'
+import projectImage07 from '@assets/images/projects/antilica-website/chaoscosmos-antilica-website-1-w2560.webp'
+import projectImage08 from '@assets/images/projects/mobilum-website/chaoscosmos-mobilum-website-1-w2560.webp'
+import projectImage09 from '@assets/images/projects/artt-website/chaoscosmos-website-artt-w2560.webp'
+import projectImage10 from '@assets/images/projects/kaid/chaoscosmos-kaid-intro.webp'
 
 export const getStaticPaths = (async ({ paginate }) => {
   const projects = await getCollection('projects')
@@ -28,7 +28,7 @@ export const getStaticPaths = (async ({ paginate }) => {
     slug: slugify(label),
   }))
 
-  const projectImages = [projectImage1, projectImage2, projectImage3, projectImage4, projectImage5, projectImage6, projectImage7, projectImage8, projectImage50]
+  const projectImages = [projectImage01, projectImage02, projectImage03, projectImage04, projectImage05, projectImage06, projectImage07, projectImage08, projectImage09, projectImage10]
 
   const projectsWithImages = projects.map((project, index) => {
     return {
