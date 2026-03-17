@@ -6,11 +6,13 @@ import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
 import tailwindcss from '@tailwindcss/vite'
 
+import partytown from '@astrojs/partytown';
+
 // https://astro.build/config
 export default defineConfig({
   compressHTML: true,
   site: 'https://chaoscosmos.pl',
-  integrations: [compress(), icon(), mdx(), sitemap()],
+  integrations: [compress(), icon(), mdx(), sitemap(), partytown({ config: { forward: ['dataLayer.push', 'gtag'] } })],
   i18n: {
     locales: ["es", "en"],
     defaultLocale: "en",
