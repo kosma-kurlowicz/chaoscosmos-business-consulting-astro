@@ -9,6 +9,7 @@ import projectImage1 from '@assets/images/articles/article-1-vanilla-factory-dis
 import projectImage2 from '@assets/images/articles/civil-war/vlcsnap-2024-12-12-00h24m38s240.webp'
 import projectImage3 from '@assets/images/articles/filmowo-2025/Screenshot-2024-12-31-182203.webp'
 import projectImage4 from '@assets/images/articles/bharat/624840718_4404594813149944_3124348101418873352_n.webp'
+import projectImage5 from '@assets/images/articles/diesel-s26/Screenshot 2026-03-17 001025.webp'
 
 /**
  * Featured articles Component
@@ -36,7 +37,7 @@ const { class: className, limit = 3, title = 'Artykuły' } = Astro.props
 
 // Get articles from content collection
 const articles = await getCollection('articles')
-const projectImages = [projectImage1, projectImage2, projectImage3, projectImage4]
+const projectImages = [projectImage1, projectImage2, projectImage3, projectImage4, projectImage5]
 
 const articlesReversed = articles.reverse()
 const projectImagesReversed = projectImages.reverse()
