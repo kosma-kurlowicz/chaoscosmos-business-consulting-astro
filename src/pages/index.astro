@@ -24,7 +24,7 @@ import '../assets/css/termynal.css';
 ---
 
 <DefaultLayout title="Home">
-  <Hero />
+<Hero />
 <section class="py-24">
   <div class="container">
     <h2 class="text-base/7 text-center font-semibold">Usługi</h2> 
@@ -164,7 +164,9 @@ import '../assets/css/termynal.css';
     </div>
   </div>
 </section>
-  <ContentMedia imgSrc="/kosma-carmen-2022-autoportret-full-h800.webp">
+<FeaturedArticles />
+<FeaturedProjects />
+<ContentMedia imgSrc="/kosma-carmen-2022-autoportret-full-h800.webp">
     <Heading level="h2" class="lineheight1">Kosma Carmen Kurłowicz</Heading>
     <p class="text-2xl">
       Business Consultant | Filmmaker | Experienced in Design & Marketing
@@ -305,76 +307,8 @@ import '../assets/css/termynal.css';
 </ul>
           </AccordionItem>
         </Accordion>
-  </ContentMedia>
-<section class="my-32 md:my-64 pr-6 pl-6" id="pricing">
-    </div>
-  <div class="relative isolate">
-  <div aria-hidden="true" class="absolute inset-x-0 -top-3 -z-10 transform-gpu overflow-hidden px-36 blur-3xl">
-    <div style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)" class="mx-auto aspect-1155/678 w-288.75 bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-30"></div>
-  </div>
-  <div class="mx-auto max-w-4xl text-center">
-    <h2 class="text-base/7 font-semibold">Cennik</h2>
-    <p class="mt-2 text-5xl font-semibold tracking-tight text-balance sm:text-6xl">Wybierz model współpracy najlepszy dla Ciebie</p>
-  </div>
-  <!--<p class="mx-auto mt-6 max-w-2xl text-center text-lg font-medium text-pretty sm:text-xl/8">Choose an affordable plan that's packed with the best features for engaging your audience, creating customer loyalty, and driving sales.</p>-->
-  <div class="mx-auto mt-16 grid max-w-lg grid-cols-1 items-center gap-y-6 sm:mt-20 sm:gap-y-0 lg:max-w-4xl lg:grid-cols-2 text-gray-900">
-    <div class="rounded-3xl rounded-t-3xl p-8 ring-1 bg-white/90 ring-gray-900/10 sm:mx-8 sm:rounded-b-none sm:p-10 lg:mx-0 lg:rounded-tr-none lg:rounded-bl-3xl gsapanim">
-      <h3 id="tier-hobby" class="text-base/7 font-semibold text-indigo-600">Elastycznie</h3>
-      <p class="mt-4 flex items-baseline gap-x-2">
-        <span class="text-5xl font-semibold tracking-tight">200 zł z VAT</span>
-        <span class="text-base ">/ godzinę</span>
-      </p>
-      <p class="mt-6 text-base/7 ">Podstawowy model, jeśli potrzebujesz konkretnych rozwiązań i odpowiedzi.</p>
-    </div>
-    <div class="relative rounded-3xl bg-gray-900 p-8 shadow-2xl ring-1 ring-gray-900/10 sm:p-10 gsapanim">
-      <h3 id="tier-enterprise" class="text-base/7 font-semibold text-indigo-400">Prosto</h3>
-      <p class="mt-4 flex items-baseline gap-x-2">
-        <span class="text-5xl font-semibold tracking-tight text-white">w Twoim budżecie</span>
-      </p>
-      <p class="mt-6 text-base/7 text-gray-300">Jeśli masz złożony projekt i wiele testów do przeprowadzenia.</p>
-      <!--<ul role="list" class="mt-8 space-y-3 text-sm/6 text-gray-300 sm:mt-10">
-        <li class="flex gap-x-3">
-          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="h-6 w-5 flex-none text-indigo-400">
-            <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
-          </svg>
-          Unlimited products
-        </li>
-        <li class="flex gap-x-3">
-          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="h-6 w-5 flex-none text-indigo-400">
-            <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
-          </svg>
-          Unlimited subscribers
-        </li>
-        <li class="flex gap-x-3">
-          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="h-6 w-5 flex-none text-indigo-400">
-            <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
-          </svg>
-          Advanced analytics
-        </li>
-        <li class="flex gap-x-3">
-          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="h-6 w-5 flex-none text-indigo-400">
-            <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
-          </svg>
-          Dedicated support representative
-        </li>
-        <li class="flex gap-x-3">
-          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="h-6 w-5 flex-none text-indigo-400">
-            <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
-          </svg>
-          Marketing automations
-        </li>
-        <li class="flex gap-x-3">
-          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="h-6 w-5 flex-none text-indigo-400">
-            <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
-          </svg>
-          Custom integrations
-        </li>
-      </ul>-->
-    </div>
-  </div>
-</div>
-</section>
-  <section class="my-32 md:my-64">
+</ContentMedia>
+<section class="my-32 md:my-64">
     <div class="mx-auto max-w-4xl px-6 text-center">
       <Heading level="h2" class="mb-6">Spektrum praktycznego doświadczenia z...</Heading>
       <div class="flex flex-wrap gap-2">
@@ -443,10 +377,8 @@ import '../assets/css/termynal.css';
           <Badge type="default">Business Model Canvas</Badge>
       </div>
     </div>
-  </section>
-  <FeaturedProjects />
-  <FeaturedArticles />
-  <!-- <section class="my-32 md:my-64">
+</section>
+<!-- <section class="my-32 md:my-64">
     <div class="container grid grid-cols-1 gap-12 md:grid-cols-2">
       <div class="flex flex-col items-start gap-4">
         <Heading level="h2">FAQ</Heading>
@@ -507,7 +439,7 @@ import '../assets/css/termynal.css';
       </div>
     </div>
   </section> -->
-  <section class="my-32 md:my-64">
+<section class="my-32 md:my-64">
   <div class="mx-auto max-w-7xl px-6 lg:px-8">
     <div class="max-w-2xl lg:mx-0">
       <h2>Referencje</h2>
@@ -521,8 +453,76 @@ import '../assets/css/termynal.css';
   <Testimonials name="Magdalena" position="Instytut Kultury Miejskiej w Gdańsku" testimonial="&quot;Thank you for the great cooperation! Kosma Kurłowicz and his team prepared a website for one of our research projects. We are very pleased with the final result, Kosma is very objective, specific and communicative. We recommend 🙂 Positive: Responsiveness, Quality, Professionalism, Value.&quot;" icon="/images/testimonials/nik-iurev-7h82oLj3GA0-unsplash.webp" />
     </div>
 </div>
-  </section>
-  <!--<section class="mmy-32 md:my-64">
+</section>
+<section class="my-32 md:my-64 pr-6 pl-6" id="pricing">
+    </div>
+  <div class="relative isolate">
+  <div aria-hidden="true" class="absolute inset-x-0 -top-3 -z-10 transform-gpu overflow-hidden px-36 blur-3xl">
+    <div style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)" class="mx-auto aspect-1155/678 w-288.75 bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-30"></div>
+  </div>
+  <div class="mx-auto max-w-4xl text-center">
+    <h2 class="text-base/7 font-semibold">Cennik</h2>
+    <p class="mt-2 text-5xl font-semibold tracking-tight text-balance sm:text-6xl">Wybierz model współpracy najlepszy dla Ciebie</p>
+  </div>
+  <!--<p class="mx-auto mt-6 max-w-2xl text-center text-lg font-medium text-pretty sm:text-xl/8">Choose an affordable plan that's packed with the best features for engaging your audience, creating customer loyalty, and driving sales.</p>-->
+  <div class="mx-auto mt-16 grid max-w-lg grid-cols-1 items-center gap-y-6 sm:mt-20 sm:gap-y-0 lg:max-w-4xl lg:grid-cols-2 text-gray-900">
+    <div class="rounded-3xl rounded-t-3xl p-8 ring-1 bg-white/90 ring-gray-900/10 sm:mx-8 sm:rounded-b-none sm:p-10 lg:mx-0 lg:rounded-tr-none lg:rounded-bl-3xl gsapanim">
+      <h3 id="tier-hobby" class="text-base/7 font-semibold text-indigo-600">Elastycznie</h3>
+      <p class="mt-4 flex items-baseline gap-x-2">
+        <span class="text-5xl font-semibold tracking-tight">200 zł z VAT</span>
+        <span class="text-base ">/ godzinę</span>
+      </p>
+      <p class="mt-6 text-base/7 ">Podstawowy model, jeśli potrzebujesz konkretnych rozwiązań i odpowiedzi.</p>
+    </div>
+    <div class="relative rounded-3xl bg-gray-900 p-8 shadow-2xl ring-1 ring-gray-900/10 sm:p-10 gsapanim">
+      <h3 id="tier-enterprise" class="text-base/7 font-semibold text-indigo-400">Prosto</h3>
+      <p class="mt-4 flex items-baseline gap-x-2">
+        <span class="text-5xl font-semibold tracking-tight text-white">w Twoim budżecie</span>
+      </p>
+      <p class="mt-6 text-base/7 text-gray-300">Jeśli masz złożony projekt i wiele testów do przeprowadzenia.</p>
+      <!--<ul role="list" class="mt-8 space-y-3 text-sm/6 text-gray-300 sm:mt-10">
+        <li class="flex gap-x-3">
+          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="h-6 w-5 flex-none text-indigo-400">
+            <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+          </svg>
+          Unlimited products
+        </li>
+        <li class="flex gap-x-3">
+          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="h-6 w-5 flex-none text-indigo-400">
+            <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+          </svg>
+          Unlimited subscribers
+        </li>
+        <li class="flex gap-x-3">
+          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="h-6 w-5 flex-none text-indigo-400">
+            <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+          </svg>
+          Advanced analytics
+        </li>
+        <li class="flex gap-x-3">
+          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="h-6 w-5 flex-none text-indigo-400">
+            <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+          </svg>
+          Dedicated support representative
+        </li>
+        <li class="flex gap-x-3">
+          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="h-6 w-5 flex-none text-indigo-400">
+            <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+          </svg>
+          Marketing automations
+        </li>
+        <li class="flex gap-x-3">
+          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="h-6 w-5 flex-none text-indigo-400">
+            <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+          </svg>
+          Custom integrations
+        </li>
+      </ul>-->
+    </div>
+  </div>
+</div>
+</section>
+<!--<section class="mmy-32 md:my-64">
     <div class="container">
       <Heading level="h2" class="mb-16">Impact in numbers</Heading>
       <div class="grid grid-cols-1 gap-12 sm:grid-cols-2 md:grid-cols-4">
