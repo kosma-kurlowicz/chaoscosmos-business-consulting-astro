@@ -3,6 +3,7 @@ import DefaultLayout from '@layouts/DefaultLayout.astro'
 import PageHeader from '@components/PageHeader.astro'
 import { Heading, Notification } from 'accessible-astro-components'
 import { getCollection } from 'astro:content'
+import { slugify } from '@/utils/slugify'
 
 // Get all portfolio projects
 const projects = await getCollection('projects')
@@ -10,9 +11,9 @@ const projects = await getCollection('projects')
 // Define static pages with their descriptions
 const staticPages = [
   {
-    title: 'ChaosCosmos Home',
+    title: 'ChaosCosmos Wszechstronny Konsulting Marketingowy',
     url: '/',
-    description: 'Business Consulting services for emerging start-ups and established enterprises.',
+    description: 'From Chaos to Cosmos in your business.',
   },
 ]
 ---
@@ -64,17 +65,17 @@ const staticPages = [
             projects.map((project) => (
               <article>
                 <Heading level="h3" size="h6" class="mb-3">
-                  <a href={`/portfolio/${project.data.slug ?? project.id}`}>{project.data.title}</a>
+                  <a href={`/portfolio/${slugify(project.data.title)}`}>{project.data.title}</a>
                 </Heading>
                 <p class="mb-3">{project.data.description}</p>
                 <div class="text-xs">
                   <p class="mb-1">
-                    By: <span class="font-medium">{project.data.author}</span>
+                    Klient: <span class="font-medium">{project.data.client}</span>
                   </p>
                   <p>
                     URL:{' '}
                     <code class="rounded bg-neutral-100 px-1 py-0.5 text-xs text-neutral-500 dark:bg-neutral-800 dark:text-neutral-500">
-                      /portfolio/{project.data.slug ?? project.id}
+                      /portfolio/{slugify(project.data.title)}
                     </code>
                   </p>
                 </div>
@@ -120,7 +121,7 @@ const staticPages = [
           <ul>
             <li>
               <span class="font-bold">XML Sitemap:</span> An automated XML sitemap is generated at
-              <code>/sitemap.xml</code>
+              <code>/sitemap-index.xml</code>
               for search engine optimization.
             </li>
             <li>
