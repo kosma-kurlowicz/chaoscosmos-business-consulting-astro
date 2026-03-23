@@ -1,0 +1,66 @@
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import PageHeader from '@components/PageHeader.astro'
+import SocialShares from '@components/SocialShares.astro'
+import { Heading } from 'accessible-astro-components'
+import { getCollection, render } from 'astro:content'
+import { slugify } from '@/utils/slugify'
+import type { CollectionEntry } from 'astro:content'
+
+export async function getStaticPaths() {
+  const sessions = await getCollection('sessions')
+
+  const sessionImages = [
+    { src: '/sessions/session-image-1.png' },
+  ]
+
+  return sessions.map((session, index) => {
+    const sessionSlug = session.data.slug ?? slugify(session.data.title)
+    const sessionWithImage = {
+      ...session,
+      featuredImage: sessionImages[index % sessionImages.length].src,
+      slug: sessionSlug,
+    }
+
+    return {
+      params: { session: sessionSlug },
+      props: { session: sessionWithImage, slug: sessionSlug },
+    }
+  })
+}
+
+interface Props {
+  session: CollectionEntry<'sessions'> & { featuredImage: string; slug?: string }
+}
+
+const { session } = Astro.props
+const { Content } = await render(session)
+
+const client = {
+  name: session.data.author,
+  image: '/sessions/session-image-1.png',
+  bio: 'Autor',
+}
+---
+
+<DefaultLayout title={session.data.title} description={session.data.description} url={`/my-studio-sessions/${session.slug}`}>
+  <PageHeader
+    title={session.data.title}
+    subtitle={session.data.description}
+    author={client}
+    bgType="bordered"
+    featuredImage={session.featuredImage}
+  />
+  <section class="my-12">
+    <div class="narrow space-content container">
+      <Content />
+    </div>
+  </section>
+</DefaultLayout>
+
+<style lang="scss" is:global>
+  .narrow {
+    margin-inline: auto;
+    max-width: 65ch;
+  }
+</style>

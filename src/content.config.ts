@@ -13,7 +13,8 @@ const projects = defineCollection({
     description: z.string(),
     tags: z.array(z.string()).default([]),
     // Optional slug to override automatic title-based slug
-    slug: z.string().optional(),
+      slug: z.string().optional(),
+    pubDate: z.date(),
   }),
 })
 
@@ -31,5 +32,17 @@ const articles = defineCollection({
   }),
 })
 
+const sessions = defineCollection({
+  loader: glob({ pattern: '**/*.mdx', base: './src/content/sessions' }),
+  schema: z.object({
+    title: z.string(),
+    author: z.string(),
+    description: z.string(),
+      tags: z.array(z.string()).default([]),
+      // Optional slug to override automatic title-based slug
+      slug: z.string().optional(),
+  }),
+})
+
 // 4. Export a single `collections` object to register you collection(s)
-export const collections = { projects, articles }
+export const collections = { projects, articles, sessions }

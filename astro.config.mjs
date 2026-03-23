@@ -13,7 +13,7 @@ export default defineConfig({
   site: 'https://chaoscosmos.pl',
   integrations: [compress(), icon(), mdx(), sitemap(), partytown({ config: { forward: ['dataLayer.push', 'gtag'] } })],
   i18n: {
-    locales: ["es", "en"],
+    locales: ["pl", "en"],
     defaultLocale: "en",
   },
   vite: {
@@ -37,6 +37,7 @@ export default defineConfig({
         '@public': fileURLToPath(new URL('./public', import.meta.url)),
         '@post-images': fileURLToPath(new URL('./public/posts', import.meta.url)),
         '@project-images': fileURLToPath(new URL('./public/projects', import.meta.url)),
+        '@session-images': fileURLToPath(new URL('./public/sessions', import.meta.url)),
       },
     },
   },

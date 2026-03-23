@@ -1,0 +1,82 @@
+---
+import { Card, Heading, Link } from 'accessible-astro-components'
+import { Icon } from 'astro-icon/components'
+import { getCollection } from 'astro:content'
+import { slugify } from '@/utils/slugify'
+
+// Import images directly for optimization
+import sessionImage01 from '@assets/images/sessions/veganetti-summer/veganetti-rame-di-napoli_IGP9412-v2-h1200.webp'
+
+/**
+ * FeaturedSessions Component
+ *
+ * @description A component that displays featured sessions from Astro Content Collections
+ */
+interface Props {
+  /**
+   * Additional classes to apply to the section
+   */
+  class?: string
+  /**
+   * The number of sessions to display
+   * @default 6
+   */
+  limit?: number
+  /**
+   * The title for the section
+   * @default "Featured sessions"
+   */
+  title?: string
+}
+
+const { class: className, limit = 3, title = 'Sesje z mojego studia' } = Astro.props
+
+// Get sessions from content collection
+const sessions = await getCollection('sessions')
+const sessionImages = [sessionImage01]
+
+// Limit sessions and add featured images
+const sessionsReversed = sessions.reverse() // Show most recent sessions first
+const sessionImagesReversed = sessionImages.reverse() // Reverse images to match session order
+const featuredSessions = sessionsReversed.slice(0, limit).map((session, index) => ({
+  ...session,
+  // slug from frontmatter or title
+  slug: session.data.slug ?? slugify(session.data.title),
+  featuredImage: sessionImagesReversed[index % sessionImagesReversed.length],
+}))
+---
+
+<section class:list={[className, 'my-32 md:my-64']}>
+  <div class="container">
+    <Heading level="h2" class="mb-6 text-center">{title}</Heading>
+    <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
+      {
+        featuredSessions.map((session) => (
+          <Card
+            imageComponent={session.featuredImage}
+            url={'/my-studio-sessions/' + session.slug}
+            headingLevel="h2"
+            title={session.data.title}
+            footer={'Fotograf: ' + session.data.author}
+            class="gsapanim bg-[var(--card-background-color)] rounded-lg lg:rounded-bl-4xl"
+          >
+            {session.data.description}
+          </Card>
+        ))
+      }
+    </div>
+    <div class="mt-12">
+      <Link href="/my-studio-sessions/" isButton animateOnHover animationType="nudge">
+        Zobacz wszystkie sesje
+        <Icon aria-hidden="true" name="lucide:arrow-right" size="1.5rem" />
+      </Link>
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  .card {
+    border-width: 1px;
+    border-color: oklch(0.21 0.034 264.665);
+  }
+</style>

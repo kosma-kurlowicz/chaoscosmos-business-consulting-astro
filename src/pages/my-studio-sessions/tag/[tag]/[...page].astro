@@ -1,0 +1,147 @@
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import PageHeader from '@components/PageHeader.astro'
+import { Badge, Card, Heading, Link, Pagination } from 'accessible-astro-components'
+import { getCollection } from 'astro:content'
+import type { GetStaticPaths, Page } from 'astro'
+import type { CollectionEntry } from 'astro:content'
+import { slugify } from '@/utils/slugify'
+
+// Import images directly for optimization
+import sessionImage01 from '@assets/images/sessions/veganetti-summer/veganetti-rame-di-napoli_IGP9412-v2-h1200.webp'
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const sessions = await getCollection('sessions')
+  const allTags = sessions.map((session) => session.data.tags).flat()
+  const uniqueTagLabels = [...new Set(allTags)].sort((a, b) => a.localeCompare(b))
+  const uniqueTags = uniqueTagLabels.map((label) => ({
+    label,
+    slug: slugify(label),
+  }))
+
+  const sessionImages = [sessionImage01]
+
+  const sessionsWithImages = sessions.map((session, index) => {
+    return {
+      ...session,
+      // slug from frontmatter or title
+      slug: session.data.slug ?? slugify(session.data.title),
+      featuredImage: sessionImages[index % sessionImages.length],
+    }
+  })
+
+  // Generate paginated pages for each tag
+  const allPaginatedPages = []
+
+  for (const tag of uniqueTags) {
+    const filteredSessions = sessionsWithImages.filter((session) =>
+      session.data.tags.map((tag) => slugify(tag)).includes(tag.slug),
+    )
+
+    const paginatedPages = paginate(filteredSessions, {
+      pageSize: 6,
+      params: { tag: tag.slug },
+      props: {
+        currentTag: tag,
+        uniqueTags,
+      },
+    })
+
+    allPaginatedPages.push(...paginatedPages)
+  }
+
+  return allPaginatedPages
+}) satisfies GetStaticPaths
+
+interface Props {
+  page: Page<CollectionEntry<'sessions'> & { featuredImage: any; slug?: string }>
+  currentTag: { label: string; slug: string }
+  uniqueTags: { label: string; slug: string }[]
+}
+
+const { page, currentTag, uniqueTags } = Astro.props
+---
+
+<DefaultLayout
+  title={`Sesje z mojego studia - ${currentTag.label}`}
+  description={`Sesje otagowane ${currentTag.label}. Odkryj naszą pracę w ${currentTag.label} i powiązanych technologiach.`}
+>
+  <PageHeader
+    title={`Sesje z mojego studia: ${currentTag.label}`}
+    subtitle={`Showing ${page.total} session${page.total !== 1 ? 's' : ''} tagged with "${currentTag.label}". <a href="/my-studio-sessions">View all sessions</a> or filter by other tags below.`}
+    bgType="bordered"
+    customBreadcrumbLabels={{
+      [currentTag.slug]: currentTag.label,
+    }}
+    joinLastBreadcrumb={true}
+  />
+  <section class="my-12">
+    <div class="container">
+      <Heading level="h2" size="h5" class="mb-2">Tagi</Heading>
+      <div class="flex flex-wrap gap-4">
+        <Link href="/my-studio-sessions">Wszystkie sesje</Link>
+        {
+          uniqueTags.map((tag: { label: string; slug: string }) => {
+            const isCurrentTag = tag.slug === currentTag.slug
+            return isCurrentTag ? (
+              <Link href={'/my-studio-sessions/tag/' + tag.slug} disabled class="disabled">
+                {tag.label}
+              </Link>
+            ) : (
+              <Link href={'/my-studio-sessions/tag/' + tag.slug}>{tag.label}</Link>
+            )
+          })
+        }
+      </div>
+      <p class="mt-8 text-sm">
+        <em
+          >Sesja {page.start + 1} do {page.end + 1} z {page.total} wszystkich sesji otagowanych jako "{
+            currentTag.label
+          }"</em
+        >
+      </p>
+      <ul class="mt-3 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {
+          page.data.map((session) => (
+            <li>
+              <Card
+                imageComponent={session.featuredImage}
+                url={'/my-studio-sessions/' + session.slug}
+                title={session.data.title}
+                headingLevel="h2"
+                footer={'Klient: ' + session.data.author}
+                fullHeight={true}
+                class="gsapanim  bg-[var(--card-background-color)] rounded-lg lg:rounded-bl-4xl"
+              >
+                <span slot="meta">
+                  {session.data.tags.map((tag) => {
+                    const isCurrentTag = tag === currentTag.label
+                    return isCurrentTag ? <Badge class="bg-blue-600 text-white">{tag}</Badge> : <Badge>{tag}</Badge>
+                  })}
+                </span>
+                {session.data.description}
+              </Card>
+            </li>
+          ))
+        }
+      </ul>
+
+      <!-- Pagination -->
+      {
+        page && page.lastPage > 1 && (
+          <div class="mt-12 grid place-content-center">
+            <Pagination
+              firstPage={page.url.prev ? `/my-studio-sessions/tag/${currentTag.slug}` : null}
+              previousPage={page.url.prev ? page.url.prev : null}
+              nextPage={page.url.next ? page.url.next : null}
+              lastPage={page.url.next ? `/my-studio-sessions/tag/${currentTag.slug}/${page.lastPage}` : null}
+              currentPage={`${page.currentPage}`}
+              totalPages={`${page.lastPage}`}
+              ariaLabel={`${currentTag.label} sessions pagination`}
+            />
+          </div>
+        )
+      }
+    </div>
+  </section>
+</DefaultLayout>
