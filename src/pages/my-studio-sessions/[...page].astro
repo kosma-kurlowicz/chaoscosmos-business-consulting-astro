@@ -9,6 +9,7 @@ import { slugify } from '@/utils/slugify'
 
 // Import images directly for optimization
 import sessionImage01 from '@assets/images/sessions/veganetti-summer/veganetti-rame-di-napoli_IGP9412-v2-h1200.webp'
+import sessionImage02 from '@assets/images/sessions/adidas/pexels-kosma-kurlowicz-1051820-2029355-scaled.webp'
 
 export const getStaticPaths = (async ({ paginate }) => {
   const sessions = await getCollection('sessions')
@@ -19,7 +20,7 @@ export const getStaticPaths = (async ({ paginate }) => {
     slug: slugify(label),
   }))
 
-  const sessionImages = [sessionImage01]
+  const sessionImages = [sessionImage01, sessionImage02]
 
   const sessionsWithImages = sessions.map((session, index) => {
     return {
