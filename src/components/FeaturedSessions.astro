@@ -8,6 +8,7 @@ import { slugify } from '@/utils/slugify'
 import sessionImage01 from '@assets/images/sessions/veganetti-summer/veganetti-rame-di-napoli_IGP9412-v2-h1200.webp'
 import sessionImage02 from '@assets/images/sessions/adidas/pexels-kosma-kurlowicz-1051820-2029355-scaled.webp'
 import sessionImage03 from '@assets/images/sessions/cheesecake-traditional/pexels-kosma-kurlowicz-1051820-2029645.webp'
+import sessionImage04 from '@assets/images/sessions/winter-solstice/kosma-kurlowicz-chaos-cosmos-winter-dead-no4_DSC3886-h1920.webp'
 
 /**
  * FeaturedSessions Component
@@ -35,7 +36,7 @@ const { class: className, limit = 3, title = 'Sesje z mojego studia' } = Astro.p
 
 // Get sessions from content collection
 const sessions = await getCollection('sessions')
-const sessionImages = [sessionImage01, sessionImage02, sessionImage03]
+const sessionImages = [sessionImage01, sessionImage02, sessionImage03, sessionImage04]
 
 // Limit sessions and add featured images
 const sessionsReversed = sessions.reverse() // Show most recent sessions first
