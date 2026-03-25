@@ -46,9 +46,9 @@ const featuredSessions = sessionsReversed.slice(0, limit).map((session, index) =
 }))
 ---
 
-<section class:list={[className, 'my-32 md:my-64']}>
+<section class:list={[className, 'py-32 bg-gray-900']}>
   <div class="container">
-    <Heading level="h2" class="mb-6 text-center">{title}</Heading>
+    <Heading level="h2" class="mb-6 text-center text-white">{title}</Heading>
     <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
       {
         featuredSessions.map((session) => (
@@ -58,7 +58,7 @@ const featuredSessions = sessionsReversed.slice(0, limit).map((session, index) =
             headingLevel="h2"
             title={session.data.title}
             footer={'Fotograf: ' + session.data.author}
-            class="gsapanim bg-[var(--card-background-color)] rounded-lg lg:rounded-bl-4xl"
+            class="gsapanim bg-[gray-900] text-white rounded-lg lg:rounded-bl-4xl"
           >
             {session.data.description}
           </Card>
