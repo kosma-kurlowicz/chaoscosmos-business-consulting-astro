@@ -12,6 +12,7 @@ import sessionImage01 from '@assets/images/sessions/veganetti-summer/veganetti-r
 import sessionImage02 from '@assets/images/sessions/adidas/pexels-kosma-kurlowicz-1051820-2029355-scaled.webp'
 import sessionImage03 from '@assets/images/sessions/cheesecake-traditional/pexels-kosma-kurlowicz-1051820-2029645.webp'
 import sessionImage04 from '@assets/images/sessions/winter-solstice/kosma-kurlowicz-chaos-cosmos-winter-dead-no4_DSC3886-h1920.webp'
+import sessionImage05 from '@assets/images/sessions/stardust/chaoscosmos-glam-cosmic-matter_DSC4399-h1920.webp'
 
 export const getStaticPaths = (async ({ paginate }) => {
   const sessions = await getCollection('sessions')
@@ -22,7 +23,7 @@ export const getStaticPaths = (async ({ paginate }) => {
     slug: slugify(label),
   }))
 
-  const sessionImages = [sessionImage01, sessionImage02, sessionImage03, sessionImage04]
+  const sessionImages = [sessionImage01, sessionImage02, sessionImage03, sessionImage04, sessionImage05]
 
   const sessionsWithImages = sessions.map((session, index) => {
     return {
