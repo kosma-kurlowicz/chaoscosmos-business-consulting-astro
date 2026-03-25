@@ -1,0 +1,27 @@
+---
+title: Rhubarb
+author: Kosma Carmen Kurłowicz
+description: Sesja studyjna
+tags: ["fotografia produktowa", "fotografia studyjna", "fotografia AI", "kosmetyki", "art directing"] 
+pubDate: 2025-11-12
+coverImage: article-1-vanilla-factory-disorted-scaled.webp
+---
+
+import BlockQuote from '@components/BlockQuote.astro'
+import BreakoutImage from '@components/BreakoutImage.astro'
+import { Image } from 'astro:assets'
+import sessionImage01 from '@assets/images/sessions/rhubarb/chaoscosmos-rabarbar-rose-chafer-v11.webp'
+import sessionImage02 from '@assets/images/sessions/rhubarb/chaoscosmos-rabarbar-lizards-video-cover-v11-1.webp'
+import sessionImage03 from '@assets/images/sessions/rhubarb/chaoscosmos-rabarbar-rose-chafer-v11.webp'
+
+<div class="grid grid-cols-2 gap-2 max-w-full">
+        <div>
+            <Image src={sessionImage01} alt="" class="h-auto max-w-full rounded-[1rem]" />
+        </div>
+        <div>
+            <Image src={sessionImage02} alt="" class="h-auto max-w-full rounded-[1rem]" />
+        </div>
+        <div>
+            <Image src={sessionImage03} alt="" class="h-auto max-w-full rounded-[1rem]" />
+        </div>
+    </div>
