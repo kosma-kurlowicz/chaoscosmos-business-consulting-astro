@@ -11,6 +11,7 @@ import sessionImage03 from '@assets/images/sessions/cheesecake-traditional/pexel
 import sessionImage04 from '@assets/images/sessions/winter-solstice/kosma-kurlowicz-chaos-cosmos-winter-dead-no4_DSC3886-h1920.webp'
 import sessionImage05 from '@assets/images/sessions/stardust/chaoscosmos-glam-cosmic-matter_DSC4399-h1920.webp'
 import sessionImage06 from '@assets/images/sessions/rhubarb/chaoscosmos-rabarbar-rose-chafer-v11.webp'
+import sessionImage07 from '@assets/images/sessions/old-masters/chaoscosmos_7up-full-DSC2859-h2400.webp'
 
 /**
  * FeaturedSessions Component
@@ -38,7 +39,7 @@ const { class: className, limit = 3, title = 'Sesje z mojego studia' } = Astro.p
 
 // Get sessions from content collection
 const sessions = await getCollection('sessions')
-const sessionImages = [sessionImage01, sessionImage02, sessionImage03, sessionImage04, sessionImage05, sessionImage06]
+const sessionImages = [sessionImage01, sessionImage02, sessionImage03, sessionImage04, sessionImage05, sessionImage06, sessionImage07]
 
 // Limit sessions and add featured images
 const sessionsReversed = sessions.reverse() // Show most recent sessions first
