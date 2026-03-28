@@ -15,7 +15,12 @@ interface Props {
   title?: string
   /**
    * The URL the button should link to
-   * @default "https://github.com/incluud/accessible-astro-starter"
+   * @default "@assets/pdf/chaoscosmos-portfolio-Q1.2026.pdf"
+   */
+  subtitle?: string
+  /**
+   * The URL the button should link to
+   * @default "@assets/pdf/chaoscosmos-portfolio-Q1.2026.pdf"
    */
   link?: string
   /**
@@ -26,32 +31,20 @@ interface Props {
 }
 
 const {
-  title = 'Pobierz moje portfolio w formacie PDF',
-  link = 'tel:+48508865836',
-  linkText = 'Zadzwoń teraz',
+  title = 'Łatwiej mieć wszystko pod ręką. ',
+  subtitle = 'Pobierz moje portfolio w formacie PDF.',
+  link = '../assets/pdf/chaoscosmos-portfolio-Q1.2026.pdf',
+  linkText = 'Pobierz PDF',
 } = Astro.props
 ---
 
 <div class="container" id="contact">
-  <div class="call-to-action mt-24 mb-32 flex flex-col items-center gap-12 rounded-xl px-12 py-20 md:px-24">
-    <Heading level="h2" class="text-center text-3xl md:text-6xl">{title}</Heading>
-    <Link href={link} isButton size="lg" animateOnHover animationType="nudge">
+  <div class="download-pdf my-12 flex flex-col md:flex-row flex-wrap gap-4 items-center md:justify-between rounded-xl p-12 bg-[var(--card-background-color)]">
+    <div class="md:w-1/2"><h2 class="text-2xl text-center md:text-left">{title}</h2>
+    <p class="text-lg text-center md:text-left">{subtitle}</p>
+</div>
+    <Link href={link} isButton isExternal size="sm" animateOnHover animationType="nudge" class="md:w-1/2">
       {linkText}
-      <Icon aria-hidden="true" name="lucide:phone-call" size="1.5rem" />
     </Link>
   </div>
 </div>
-
-<style lang="scss">
-  @use '../assets/scss/base/mixins' as *;
-
-  .call-to-action {
-    position: relative;
-    background-image: linear-gradient(
-      315deg,
-      light-dark(var(--color-primary-100), var(--color-secondary-100)) 25%,
-      light-dark(var(--color-secondary-100), var(--color-primary-200))
-    );
-    color: var(--color-neutral-900);
-  }
-</style>
