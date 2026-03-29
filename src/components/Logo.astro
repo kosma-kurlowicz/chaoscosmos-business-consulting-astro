@@ -12,9 +12,14 @@ interface Props {
    * @default 'eager'
    */
   loading?: 'eager' | 'lazy'
+  /**
+   * Whether to load the image eagerly or lazily
+   * @default 'var(--foreground-color)'
+   */
+  fill?: string
 }
 
-const { loading = 'eager' }: Props = Astro.props
+const { loading = 'eager', fill = 'var(--foreground-color)' }: Props = Astro.props
 ---
 
 <Link href="/" class="flex items-center gap-2">
@@ -43,7 +48,7 @@ const { loading = 'eager' }: Props = Astro.props
        id="text1"
        transform="matrix(0.84380997,0,0,0.84380997,-43.344589,88.596536)"
        aria-label="chaos/cosmos"
-       fill="var(--foreground-color)"/>
+       fill={fill}/>
   </g>
 </svg>
   <span class="sr-only">ChaosCosmos Business Consulting</span>
