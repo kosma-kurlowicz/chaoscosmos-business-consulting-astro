@@ -15,6 +15,7 @@ import sessionImage04 from '@assets/images/sessions/winter-solstice/kosma-kurlow
 import sessionImage05 from '@assets/images/sessions/stardust/chaoscosmos-glam-cosmic-matter_DSC4399-h1920.webp'
 import sessionImage06 from '@assets/images/sessions/rhubarb/chaoscosmos-rabarbar-rose-chafer-v11.webp'
 import sessionImage07 from '@assets/images/sessions/old-masters/chaoscosmos_7up-full-DSC2859-h2400.webp'
+import sessionImage08 from '@assets/images/sessions/flex-ads/flex-amazon-sales-frame-w1920.webp'
 
 
 export const getStaticPaths = (async ({ paginate }) => {
@@ -26,7 +27,7 @@ export const getStaticPaths = (async ({ paginate }) => {
     slug: slugify(label),
   }))
 
-  const sessionImages = [sessionImage01, sessionImage02, sessionImage03, sessionImage04, sessionImage05, sessionImage06, sessionImage07]
+  const sessionImages = [sessionImage01, sessionImage02, sessionImage03, sessionImage04, sessionImage05, sessionImage06, sessionImage07, sessionImage08]
 
   const sessionsWithImages = sessions.map((session, index) => {
     return {
